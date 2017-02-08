@@ -3,6 +3,12 @@ logs
 *.log
 npm-debug.log*
 
+#Mac specific
+.DS_Store
+
+#Hide private keys
+.env
+
 # Runtime data
 pids
 *.pid
