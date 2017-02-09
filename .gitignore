@@ -3,6 +3,10 @@ logs
 *.log
 npm-debug.log*
 
+#App specific
+fonts
+css/font-awesome.min.css
+
 #Mac specific
 .DS_Store
 
