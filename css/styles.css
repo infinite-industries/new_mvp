@@ -2,3 +2,13 @@
     padding: 10px;
     background-color: #fff;
 }
+
+.artist-text p {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.artist-text, .intro-text {
+  background-color: #ccc;
+}
