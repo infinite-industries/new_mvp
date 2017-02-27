@@ -1,21 +1,147 @@
 /*--------------- GENERAL ------------------- */
+body{
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2{
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+}
+
+h3, h4 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+}
+
+a:link, a:visited{
+    color: #C71585;
+}
+a:hover {
+    color: #ff69b4 ;
+}
+a:active {
+    color: #C71585;
+}
+
+em {
+  /*background: black;*/
+  color: black;
+  padding:3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 1.1em;
+  font-style: normal;
+  font-weight: bold;
+}
+
 .footer {
     padding: 10px;
     background-color: #fff;
-}
-
-.artist-text p {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .artist-text, .intro-text, .image-summary, .download, .share-options, .donate {
   background-color: #ccc;
 }
 
+/*--------------- Navbar ---------------- */
+.navigation{
+  margin-top: 10px;
+  padding-bottom: 5px;
+}
+.site-title{
+  font-size: 1.8em;
+}
+
+.site-title a:link, .site-title a:visited {
+  color: black;
+}
+
+.nav-area{
+  text-align: right;
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.nav-area li{
+  display: inline;
+  margin-left: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
 /*--------------- Index view -------------- */
 
+.intro-text {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.intro-text p{
+  width:70%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.4em;
+  line-height: 40px;
+  margin-top: 10px;
+  font-family: Sanchez,Georgia,Cambria,"Times New Roman",Times,serif;
+  text-align: center;
+}
+
+.work-image{
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.work-info{
+  padding-top: 15px;
+}
+
+.work-info .month{
+  font-size: 1.4em;
+  color: #999;
+}
+
+.work-info .title{
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+.work-info .artist-name{
+  font-size: 1.4em;
+  color: #999;
+  font-weight: bold;
+}
+
+.artist-text{
+  padding-top: 15px;
+}
+
+.artist-text p {
+  max-width: 800px;
+  font-size: 1.3em;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 35px;
+  font-family: Sanchez,Georgia,"Times New Roman",Times,serif;
+  margin-top: 30px;
+}
+
+.social-media-list li {
+  display: inline;
+}
+
+.social-media-i i{
+  padding: 10px;
+}
+
+.social-media-list a:link, .social-media-list a:visited{
+  color: #999;
+}
+
+.social-media-list a:hover {
+  color: #ff69b4;
+}
 
 /*--------------- Download view -------------- */
 
