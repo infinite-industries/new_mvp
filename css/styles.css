@@ -1,6 +1,6 @@
 /*--------------- GENERAL ------------------- */
 body{
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', serif;
 }
 
 h1, h2{
@@ -42,6 +42,26 @@ em {
 .artist-text, .intro-text, .image-summary, .download, .share-options, .donate {
   background-color: #ccc;
 }
+
+.btn{
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 10px;
+  border:1px solid #C71585;
+}
+
+.btn:link, .btn:visited{
+  color: #ffffff;
+  background-color: #C71585;
+}
+
+.btn:hover{
+  color: #C71585;
+  background-color: #cccccc;
+}
+
+
 
 /*--------------- Navbar ---------------- */
 .navigation{
@@ -143,6 +163,13 @@ em {
   color: #ff69b4;
 }
 
+.get-artwork-btn{
+  margin-top: 20px;
+  margin-bottom: 30px;
+  letter-spacing: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 /*--------------- Download view -------------- */
 
 
