@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Infinite.Industries: February 2017 Release</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Sanchez|Lato:400,400i,700,700i|Oswald:400,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+<body>
+
+  <div class="container-fluid navigation">
+    <div class="row">
+      <div class="col-sm-1">
+        <a href="{{domain}}" class="site-brand"><img src="/images/site-logo.png" width="40px" height="40px"></a>
+      </div>
+      <div class="col-sm-4 site-title">
+        <a href="{{domain}}">Infinite Industries</a>
+      </div>
+      <div class="col-sm-2"></div>
+      <div class="col-sm-5">
+        <div class="nav-area">
+          <ul>
+            <li><a href="{{domain}}/about.html">About</a></li>
+            <li><a href="https://medium.com/infinite-industries">Blog</a></li>
+            <li><a href="{{domain}}/contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container intro-text">
+    {% block content %}{% endblock %}
+  </div>
+
+
+  <footer class="footer">
+    <div class="footer-area">
+      <div class="container text-center">
+        <ul class="social-media-list" style="padding-left:0px">
+          <li>
+            <a href="https://www.facebook.com/Infinite-Industries-1041120505976874/" target="_new" class="social-media-i"><i class="fa fa-facebook-official" style="font-size:40px"></i></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/1nfinite_1ndustries/" target="_new" class="social-media-i"><i class="fa fa-instagram" style="font-size:40px"></i></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/1nfinite_1" target="_new" class="social-media-i"><i class="fa fa-twitter" style="font-size:40px"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

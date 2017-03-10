@@ -17,8 +17,9 @@
   },
   "homepage": "https://github.com/infinite-industries/new_mvp#readme",
   "dependencies": {
-    "body-parser": "^1.16.1",
+    "body-parser": "^1.17.1",
     "dotenv": "^4.0.0",
-    "express": "^4.14.1"
+    "express": "^4.14.1",
+    "nunjucks": "^3.0.0"
   }
 }

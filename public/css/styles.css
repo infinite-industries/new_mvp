@@ -61,7 +61,24 @@ em {
   background-color: #cccccc;
 }
 
+.text-controller{
+  color: #C71585;
+  font-family: 'Lato', serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+.text-controller-container{
+  text-align: right;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  margin-top: 0px;
+  padding-right: 10px;
+}
 
+.text-toggle{
+  letter-spacing: 2px;
+}
 
 /*--------------- Navbar ---------------- */
 .navigation{
