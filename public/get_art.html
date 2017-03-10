@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Infinite.Industries: February 2017 Release</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Sanchez|Lato:400,400i,700,700i|Oswald:400,600,700" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Oswald:400,600,700" rel="stylesheet">
 
@@ -13,208 +16,218 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  </head>
+</head>
+
 <body>
-<!-- app -->
-<div id="app">
-  <modal-contact v-if="showContactModal" @close="showContactModal = false">
+    <!-- app -->
+    <div id="app">
+        <modal-contact v-if="showContactModal" @close="showContactModal = false">
 
-    <h3 slot="header">Contact for Artwork Availability and Pricing</h3>
-      <p>
-        Name:<input type="text" name="name" v-model="directContact.name"><br>
-        Email:<input type="text" name="email" v-model="directContact.email"><br>
-        Phone # (if preferable):<input type="text" name="phone" v-model="directContact.phone"><br>
-        Notes:<input type="text" name="notes" v-model="directContact.notes">
-      </p>
-    <a href="#" @click.prevent="collectDirectContactInfo()" class="btn btn-info" role="button">CONTACT</a>
-  </modal-contact>
+            <h3 slot="header">Contact for Artwork Availability and Pricing</h3>
+            <p>
+                Name:
+                <input type="text" name="name">
+                <br> Email:
+                <input type="text" name="name">
+                <br> Phone # (if preferable):
+                <input type="text" name="name">
+                <br> Notes:
+                <input type="text" name="name">
+            </p>
+            <a href="#" class="btn btn-info" role="button">CONTACT</a>
+        </modal-contact>
 
-  <modal-download v-if="showDownloadModal" @close="showDownloadModal = false">
+        <modal-download v-if="showDownloadModal" @close="showDownloadModal = false">
 
-    <h3 slot="header">Your Email</h3>
-    <p>We will send you a download link to the provided email address</p>
-    <input type="text" v-model="download.email">
-    <a href="#" class="btn btn-info" role="button" @click.prevent="initiateDownloadProcess()">SEND</a>
-  </modal-download>
+            <h3 slot="header">Your Email</h3>
+            <p>We will send you a download link to the provided email address</p>
+            <input type="text">
+            <a href="#" class="btn btn-send" role="button">SEND</a>
+        </modal-download>
 
 
-  <div class="container-fluid navigation">
-    <div class="row">
-      <div class="col-sm-1">
-        <a href="./index.html" class="site-brand"><img src="images/site-logo.png" width="40px" height="40px"></a>
-      </div>
-      <div class="col-sm-4 site-title">
-        <a href="./index.html">Infinite Industries</a>
-      </div>
-      <div class="col-sm-2"></div>
-      <div class="col-sm-5">
-        <div class="nav-area">
-          <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
+        <div class="container-fluid navigation">
+            <div class="row">
+                <div class="col-sm-1">
+                    <a href="./index.html" class="site-brand"><img src="images/site-logo.png" width="40px" height="40px"></a>
+                </div>
+                <div class="col-sm-4 site-title">
+                    <a href="./index.html">Infinite Industries</a>
+                </div>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-5">
+                    <div class="nav-area">
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="container-fluid image-summary">
-      <div class="row">
-        <div class="col-sm-4">
-          <img src="images/tooth-and-nail-jr-southard.jpg" width="250px" height="250px">
+        <div class="container-fluid image-summary">
+            <div class="row">
+                <div class="col-sm-4" id="work-thumb">
+                    <img src="images/tooth-and-nail-jr-southard.jpg" width="250px" height="250px">
+                </div>
+                <div class="col-sm-8" id="work-info-box">
+                    <ul class="work-info">
+                        <li class="month">January 2017</li>
+                        <li class="title">Tooth and Nail (Kentucky/Pennsylvania) #3</li>
+                        <li class="artist-name">James R Southard</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-8">
-          <ul class="work-info">
-            <li class="month">January 2017</li>
-            <li class="title">Tooth and Nail (Kentucky/Pennsylvania) #3</li>
-            <li class="artist-name">James R Southard</li>
-          </ul>
+
+        <div class="container-fluid share-or-donate">
+            <h3 class="call-to-action">We would like to ask you to <a href="#">share</a> the work on social media or <a href="#">donate</a></h3>
+            <h4>You don’t have to but you will definitely earn some good art karma points and our deep appreciation :)</h4>
         </div>
-      </div>
-  </div>
 
-  <div class="container-fluid share-or-donate">
-    <h2 class="call-to-action">We would like to ask you to <a href="#">share</a> the work on social media or <a href="#">donate</a></h2>
-    <h3>You don’t have to but you will definitely earn some good art karma points and our deep appreciation :)</h3>
-  </div>
-
-  <div class="container-fluid share-options">
-    Facebook | Twitter | extra points for Instagram (share and DM us)
-  </div>
-
-  <div class="container-fluid donate">
-    Choose Amount:
-    <input type="number" v-model="donationAmount">
-    <a href="#" class="btn btn-info" role="button" @click.prevent="processDonation()">GIVE</a>
-  </div>
-
-  <div class="container-fluid distribution-options">
-    <div class="row">
-      <div class="col-sm-3">
-        2000 X 2000 JPEG
-      </div>
-      <div class="col-sm-9">
-        *Perfect for sharing with friends on social media
-      </div>
-      <div class="col-sm-3">
-        3000 X 3000 JPEG
-      </div>
-      <div class="col-sm-9">
-        *Can be used to create cellphone wallpaper
-      </div>
-      <div class="col-sm-3">
-        5000 X 5000 JPEG
-      </div>
-      <div class="col-sm-9">
-        *Great for t-shirts and other fashion items
-      </div>
-      <div class="col-sm-3">
-        FULL PRODUCTION REZ
-      </div>
-      <div class="col-sm-9">
-        *All of the above plus exhibition copies
-      </div>
-      <div class="col-sm-3">
-      </div>
-      <div class="col-sm-9">
-        *Included in the Download
-      </div>
-    </div>
-    <h3>Additional Options:</h3>
-    <div class="row">
-      <div class="col-sm-12">
-        No hastle <a href="https://www.levelframes.com/frames/new?level_id=35501" target="_new">print production and framing</a>
-      </div>
-      <div class="col-sm-12">
-        Print from the edition <a href="#" id="show-modal" @click="showContactModal = true">produced and proofed by the artist</a>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="container-fluid download">
-    <div class="row">
-      <div class="col-sm-8">
-          <input type="checkbox">
-          I have read and agree to the terms of the license
-      </div>
-      <div class="col-sm-4">
-        <a href="#" class="btn btn-info" role="button" @click="showDownloadModal = true">Download</a>
-      </div>
-    </div>
-  </div>
-
-  <footer class="footer">
-    <div class="footer-area">
-      <div class="container text-center">
-        <ul class="social-media-list">
-          <li>
-            <a href="https://www.facebook.com/Infinite-Industries-1041120505976874/" target="_new" class="social-media-i">
-              <i class="fa fa-facebook-official"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/1nfinite_1ndustries/" target="_new" class="social-media-i">
-              <i class="fa fa-instagram"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/1nfinite_1" target="_new" class="social-media-i">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-
-</div>
-
-<script src="https://unpkg.com/vue@2.0.1/dist/vue.js"></script>
-<script src="https://unpkg.com/vue-resource@1.0.3/dist/vue-resource.min.js"></script>
-<script src="https://checkout.stripe.com/checkout.js"></script>
-
-<script src="js/app.js"></script>
-
-<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '769304786590904'); // Insert your pixel ID here.
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=769304786590904&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
-
-<!-- template for the modal component -->
-<script type="text/x-template" id="modal-template">
-<transition name="modal">
-  <div class="modal-mask">
-    <div class="modal-wrapper">
-      <div class="modal-container">
-
-        <div class="modal-header">
-          <i class="fa fa-times fa-2x close-me" @click="$emit('close')" aria-hidden="true"></i>
-          <slot name="header">
-            default header
-          </slot>
+        <div class="container-fluid share-options">
+            <em> <a href="#"> Facebook </a>  </em> | <em> <a href="#"> Twitter </a> </em> | extra points for<em><a href="#">Instagram</a></em>(share and DM us)
         </div>
-        <div class="modal-body">
-          <slot>
-            default body
-          </slot>
+
+        <div class="container-fluid donate">
+            Choose Amount:
+            <input type="text">
+            <a href="#" class="btn btn-give" role="button">GIVE</a>
         </div>
-      </div>
+
+        <div class="container-fluid distribution-options">
+            <div class="row">
+                <div class="col-sm-3">
+                    2000 X 2000 JPEG
+                </div>
+                <div class="col-sm-9">
+                    *Perfect for sharing with friends on social media
+                </div>
+                <div class="col-sm-3">
+                    3000 X 3000 JPEG
+                </div>
+                <div class="col-sm-9">
+                    *Can be used to create cellphone wallpaper
+                </div>
+                <div class="col-sm-3">
+                    5000 X 5000 JPEG
+                </div>
+                <div class="col-sm-9">
+                    *Great for t-shirts and other fashion items
+                </div>
+                <div class="col-sm-3">
+                    FULL PRODUCTION REZ
+                </div>
+                <div class="col-sm-9">
+                    *All of the above plus exhibition copies
+                </div>
+                <div class="col-sm-3">
+                </div>
+                <div class="col-sm-9">
+                    *Included in the Download
+                </div>
+            </div>
+            <h3>Additional Options:</h3>
+            <div class="row">
+                <div class="col-sm-12">
+                    No hastle <a href="https://www.levelframes.com/frames/new?level_id=35501" target="_new">print production and framing</a>
+                </div>
+                <div class="col-sm-12">
+                    Print from the edition <a href="#" id="show-modal" @click="showContactModal = true">produced and proofed by the artist</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container-fluid download">
+            <div class="row">
+                <div class="col-sm-8" id="check">
+                    <input type="checkbox"> I have read and agree to the terms of the license
+                </div>
+                <div class="col-sm-4">
+                    <a href="#" class="btn btn-download" role="button" @click="showDownloadModal = true">DOWNLOAD</a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-area">
+                <div class="container text-center">
+                    <ul class="social-media-list" style="padding-left:0px">
+                        <li>
+                            <a href="https://www.facebook.com/Infinite-Industries-1041120505976874/" target="_new" class="social-media-i"><i class="fa fa-facebook-official" style="font-size:40px"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/1nfinite_1ndustries/" target="_new" class="social-media-i"><i class="fa fa-instagram" style="font-size:40px"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/1nfinite_1" target="_new" class="social-media-i"><i class="fa fa-twitter" style="font-size:40px"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
     </div>
-  </div>
-</transition>
-</script>
+
+    <script src="https://unpkg.com/vue@2.0.1/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-resource@1.0.3/dist/vue-resource.min.js"></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+
+    <script src="js/app.js"></script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window,
+            document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '769304786590904'); // Insert your pixel ID here.
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=769304786590904&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <!-- template for the modal component -->
+    <script type="text/x-template" id="modal-template">
+        <transition name="modal">
+            <div class="modal-mask">
+                <div class="modal-wrapper">
+                    <div class="modal-container">
+
+                        <div class="modal-header">
+                            <i class="fa fa-times fa-2x close-me" @click="$emit('close')" aria-hidden="true"></i>
+                            <slot name="header">
+                                default header
+                            </slot>
+                        </div>
+                        <div class="modal-body">
+                            <slot>
+                                default body
+                            </slot>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition>
+    </script>
 
 </body>
+
 </html>
