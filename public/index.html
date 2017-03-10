@@ -39,7 +39,11 @@
 
 
   <div class="container-fluid intro-text">
-    <p>
+    <div class="text-controller-container">
+      <span class="text-controller hide-mission-statement-toggle text-toggle">[-]</span>
+      <span class="text-controller show-mission-statement-toggle text-toggle">[+]</span>
+    </div>
+    <p class="mission-statement">
       <em style="padding-left:0px">Infinite Industries</em> invites everyone to be challenged and enriched by the <em>contemporary art experience.</em>
       We believe that <em>art</em> can mean <em>more than mass produced prints</em> from big box stores. At the same time, powerful art does not need to come with a prohibitive price tag.
 
@@ -57,8 +61,12 @@
   </div>
 
   <div class="container-fluid artist-text">
+    <div class="text-controller-container">
+      <span class="text-controller hide-additional-content-toggle text-toggle">[-]</span>
+      <span class="text-controller show-additional-content-toggle text-toggle">[+]</span>
+    </div>
     <p>
-      In "Tooth and Nail #3," James R Southard recalls the western history of Lamentation of Christ imagery by compositing a series of staged photo shoots with the artist's local friends in his mother's living room in Louisville, Kentucky. JR approaches this piece with honesty and affection, with each painstaking gesture held in a timeless arrest. Set in a personal space with unnatural, dramatic lighting, the rich, resulting hues are offset by items of modern existence: crutch, garden rake, cut off jean shorts. In this way, JR's photograph suspends action with memory, principles of sanctity with principles of design. <a href="#" class="show-additional-content">Read More...</a>
+      In "Tooth and Nail #3," James R Southard recalls the western history of Lamentation of Christ imagery by compositing a series of staged photo shoots with the artist's local friends in his mother's living room in Louisville, Kentucky. JR approaches this piece with honesty and affection, with each painstaking gesture held in a timeless arrest. Set in a personal space with unnatural, dramatic lighting, the rich, resulting hues are offset by items of modern existence: crutch, garden rake, cut off jean shorts. In this way, JR's photograph suspends action with memory, principles of sanctity with principles of design. <span class="text-controller show-additional-content">Read More...</span>
     </p>
     <div class="additional-content">
       <p>
@@ -91,6 +99,50 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    $(document).ready(function(){
+        $(".additional-content").hide();
+        $(".hide-additional-content-toggle").hide();
+        $(".show-mission-statement-toggle").hide();
+
+        $(".show-additional-content").click(function(){
+            $(".additional-content").show();
+
+            $(".show-additional-content").hide();
+            $(".show-additional-content-toggle").hide();
+            $(".hide-additional-content-toggle").show();
+        });
+
+        $(".show-additional-content-toggle").click(function(){
+            $(".additional-content").show();
+
+            $(".show-additional-content").hide();
+            $(".show-additional-content-toggle").hide();
+            $(".hide-additional-content-toggle").show();
+        });
+
+        $(".hide-additional-content-toggle").click(function(){
+            $(".additional-content").hide();
+
+            $(".show-additional-content").show();
+            $(".show-additional-content-toggle").show();
+            $(".hide-additional-content-toggle").hide();
+        });
+
+        $(".show-mission-statement-toggle").click(function(){
+          $(".show-mission-statement-toggle").hide();
+          $(".hide-mission-statement-toggle").show();
+          $(".mission-statement").show();
+        })
+
+        $(".hide-mission-statement-toggle").click(function(){
+          $(".show-mission-statement-toggle").show();
+          $(".hide-mission-statement-toggle").hide();
+          $(".mission-statement").hide();
+        })
+    });
+  </script>
 
 </body>
 </html>
