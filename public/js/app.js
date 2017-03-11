@@ -7,6 +7,8 @@ Vue.component('modal-download', {
   template: '#modal-template'
 })
 
+Vue.use(VeeValidate);
+
 
 //loose JQuery in the next iteration and figure out how namespace
 //several different scopes - one for each Vue instance in one app
@@ -21,7 +23,7 @@ new Vue({
     download:{
       email:" ",
       agreedToTerms: false,
-      okToPutOnEmailList: false,
+      okToPutOnEmailList: true,
     },
     directContact: {
       name:" ",
@@ -46,7 +48,16 @@ new Vue({
     //collector contacted I.I for work availability
     collectDirectContactInfo: function(){
       console.log(this.directContact.name);
-
+      axios.post('/direct-contact', {
+        collector_name: this.directContact.name
+      })
+      .then(function(response) {
+        console.log(response.status);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+      this.showContactModal=false;
     },
     //collector provided her email and initiated download process
     initiateDownloadProcess: function(){

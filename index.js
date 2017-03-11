@@ -16,6 +16,11 @@ app.set('view engine', 'html');
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
+
+var routes= require('./routes/index');
+app.use('/', routes);
+
+
 app.use(function(req,res){
   res.render('404',{domain: process.env.DOMAIN});
 });
