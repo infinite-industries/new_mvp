@@ -14,13 +14,13 @@ h3, h4 {
 }
 
 a:link, a:visited{
-    color: #C71585;
+  color: #C71585;
 }
 a:hover {
-    color: #ff69b4 ;
+  color: #ff69b4 ;
 }
 a:active {
-    color: #C71585;
+  color: #C71585;
 }
 
 em {
@@ -180,15 +180,20 @@ em {
   color: #ff69b4;
 }
 
-.get-artwork-btn{
+.send-contact-btn, .send-email-btn, .init_download-btn, .give-donation-btn, .get-artwork-btn{
   margin-top: 20px;
   margin-bottom: 30px;
   letter-spacing: 4px;
   padding-left: 20px;
   padding-right: 20px;
 }
-/*--------------- Download view -------------- */
 
+
+/*--------------- Download view -------------- */
+.img-container {
+  padding-top: 10px;
+  text-align: center;
+}
 
 /*--------------- Contact Modal -------------- */
 
@@ -222,11 +227,14 @@ em {
 
 .modal-header h3 {
   margin-top: 0;
-  color: #42b983;
+  color: #000;
 }
 
 .modal-header .close-me{
   float: right;
+  color: #C71585;
+  letter-spacing: 2px;
+  font-size: 10px;
 }
 
 .modal-body {

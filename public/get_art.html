@@ -19,14 +19,14 @@
 <div id="app">
   <modal-contact v-if="showContactModal" @close="showContactModal = false">
 
-    <h3 slot="header">Contact for Artwork Availability and Pricing</h3>
+    <h3 slot="header">Contact Us for Artwork Availability and Pricing</h3>
       <p>
         Name:<input type="text" name="name" v-model="directContact.name"><br>
         Email:<input type="text" name="email" v-model="directContact.email"><br>
         Phone # (if preferable):<input type="text" name="phone" v-model="directContact.phone"><br>
         Notes:<input type="text" name="notes" v-model="directContact.notes">
       </p>
-    <a href="#" @click.prevent="collectDirectContactInfo()" class="btn btn-info" role="button">CONTACT</a>
+    <a href="#" @click.prevent="collectDirectContactInfo()" class="btn btn-info send-contact-btn" role="button">CONTACT</a>
   </modal-contact>
 
   <modal-download v-if="showDownloadModal" @close="showDownloadModal = false">
@@ -34,7 +34,7 @@
     <h3 slot="header">Your Email</h3>
     <p>We will send you a download link to the provided email address</p>
     <input type="text" v-model="download.email">
-    <a href="#" class="btn btn-info" role="button" @click.prevent="initiateDownloadProcess()">SEND</a>
+    <a href="#" class="btn btn-info send-email-btn" role="button" @click.prevent="initiateDownloadProcess()">SEND</a>
   </modal-download>
 
 
@@ -61,35 +61,36 @@
 
   <div class="container-fluid image-summary">
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-md-3 col-sm-4 img-container">
           <img src="images/tooth-and-nail-jr-southard.jpg" width="250px" height="250px">
         </div>
-        <div class="col-sm-8">
-          <ul class="work-info">
-            <li class="month">January 2017</li>
-            <li class="title">Tooth and Nail (Kentucky/Pennsylvania) #3</li>
-            <li class="artist-name">James R Southard</li>
-          </ul>
+        <div class="col-md-9 col-sm-8">
+          <h2 class="call-to-action">We would like to ask you to <a href="#">share</a> the work on social media or <a href="#">donate</a></h2>
+          <h3>You don’t have to but you will definitely earn some good art karma points and our deep appreciation :)</h3>
+          <div class="share-options">
+            Facebook | Twitter | extra points for Instagram (share and DM us)
+          </div>
+          <div class="donate">
+            Choose Amount:
+            <input type="number" v-model="donationAmount">
+            <a href="#" class="btn btn-info give-donation-btn" role="button" @click.prevent="processDonation()">GIVE</a>
+          </div>
         </div>
       </div>
   </div>
 
   <div class="container-fluid share-or-donate">
-    <h2 class="call-to-action">We would like to ask you to <a href="#">share</a> the work on social media or <a href="#">donate</a></h2>
-    <h3>You don’t have to but you will definitely earn some good art karma points and our deep appreciation :)</h3>
   </div>
 
-  <div class="container-fluid share-options">
-    Facebook | Twitter | extra points for Instagram (share and DM us)
-  </div>
-
-  <div class="container-fluid donate">
-    Choose Amount:
-    <input type="number" v-model="donationAmount">
-    <a href="#" class="btn btn-info" role="button" @click.prevent="processDonation()">GIVE</a>
-  </div>
 
   <div class="container-fluid distribution-options">
+
+    <ul class="work-info">
+      <li class="month">January 2017</li>
+      <li class="title">Tooth and Nail (Kentucky/Pennsylvania) #3</li>
+      <li class="artist-name">James R Southard</li>
+    </ul>
+
     <div class="row">
       <div class="col-sm-3">
         2000 X 2000 JPEG
@@ -140,7 +141,7 @@
           I have read and agree to the terms of the license
       </div>
       <div class="col-sm-4">
-        <a href="#" class="btn btn-info" role="button" @click="showDownloadModal = true">Download</a>
+        <a href="#" class="btn btn-info init_download-btn" role="button" @click="showDownloadModal = true">DOWNLOAD</a>
       </div>
     </div>
   </div>
@@ -200,7 +201,7 @@ src="https://www.facebook.com/tr?id=769304786590904&ev=PageView&noscript=1"
       <div class="modal-container">
 
         <div class="modal-header">
-          <i class="fa fa-times fa-2x close-me" @click="$emit('close')" aria-hidden="true"></i>
+          <div class="close-me" @click="$emit('close')">[hide]</div>
           <slot name="header">
             default header
           </slot>

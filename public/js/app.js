@@ -26,8 +26,8 @@ new Vue({
     directContact: {
       name:" ",
       email:" ",
-      phone:"not provided",
-      notes:"no extra notes"
+      phone:null,
+      notes:"..."
     }
   },
   methods:{
