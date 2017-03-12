@@ -39,7 +39,7 @@ em {
     background-color: #fff;
 }
 
-.artist-text, .intro-text, .image-summary, .download, .share-options, .donate {
+.artist-text, .intro-text, .work-info, .image-summary, .download{
   background-color: #ccc;
 }
 
@@ -106,6 +106,9 @@ em {
   font-weight: bold;
 }
 
+.social-media-icon{
+  margin-right: 10px;
+}
 /*--------------- Index view -------------- */
 
 .intro-text {
@@ -130,15 +133,15 @@ em {
   padding-bottom: 10px;
 }
 
-.share-options{
-  margin-top: 50px;
-  margin-bottom: 20px;
-}
-
-
 .work-info{
   padding-top: 15px;
+  padding-bottom: 55px;
 }
+.work-info-landing{
+  padding-bottom: 35px;
+  background-color: #fff;
+}
+
 .work-info p{
   text-align: center;
 }
@@ -206,6 +209,22 @@ em {
 }
 
 /*--------------- Download view -------------- */
+.call-to-share-and-donate{
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.image-summary h3{
+  text-align: center;
+  padding-bottom: 35px;
+}
+
+.share-options{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 .image-summary{
   font-family: Sanchez,Georgia,Cambria,"Times New Roman",Times,serif;
 }
@@ -229,11 +248,12 @@ em {
 }
 
 .donation-form-container{
-  max-width: 450px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .download{

@@ -47,9 +47,14 @@ new Vue({
     },
     //collector contacted I.I for work availability
     collectDirectContactInfo: function(){
-      console.log(this.directContact.name);
+      // console.log(this.directContact.name);
+      // console.log(this.errors);
       axios.post('/direct-contact', {
-        collector_name: this.directContact.name
+        collector_name: this.directContact.name,
+        collector_email: this.directContact.email,
+        collector_phone: this.directContact.phone,
+        collector_notes: this.directContact.notes
+
       })
       .then(function(response) {
         console.log(response.status);
@@ -61,7 +66,20 @@ new Vue({
     },
     //collector provided her email and initiated download process
     initiateDownloadProcess: function(){
-      console.log(this.download.email);
+      //console.log(this.download.email);
+      axios.post('/direct-contact', {
+        download_email: this.download.email,
+        download_collectorAgreedToTerms: this.download.agreedToTerms,
+        download_okToPutOnEmailList:this.download.okToPutOnEmailList
+      })
+      .then(function(response) {
+        console.log(response.status);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+      this.showDownloadModal=false;
+
     }
   }
 })

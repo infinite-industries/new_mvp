@@ -20,13 +20,34 @@
   <modal-contact v-if="showContactModal" @close="showContactModal = false">
 
     <h3 slot="header">Contact Us for Artwork Availability and Pricing</h3>
-      <p>
-        Name:<input type="text" name="name" v-model="directContact.name"><br>
-        Email:<input type="text" name="email" v-validate="{ inital:'email', rules: { required: true} }" v-model="directContact.email"><br>
-        Phone # (if preferable):<input type="text" name="phone" v-model="directContact.phone"><br>
-        Notes:<input type="text" name="notes" v-model="directContact.notes">
-      </p>
-    <a href="#" @click.prevent="collectDirectContactInfo()" class="btn btn-info send-contact-btn" role="button">CONTACT</a>
+
+    <p>
+      <form @submit.prevent="validateBeforeSubmit">
+
+        <div class="form-group" :class="{'has-error': errors.has('name') }">
+          <label class="control-label" for="name">Name:</label>
+          <input type="text" placeholder="Your Full Name" name="name" v-model="directContact.name">
+          <p class="text-danger" v-if="errors.has('name')">{{ errors.first('name') }}</p>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="email">Email:</label>
+          <input type="text" name="email" v-validate="{ inital:'email', rules: { required: true} }" v-model="directContact.email">
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="phone">Phone # (if preferable):</label><br />
+          <input type="text" name="phone" v-validate="{ inital:'email', rules: { required: true} }" v-model="directContact.phone">
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="phone">Notes:</label>
+          <input type="text" name="notes" v-model="directContact.notes">
+        </div>
+
+        <a href="#" @click.prevent="collectDirectContactInfo()" class="btn btn-info send-contact-btn" role="button">CONTACT</a>
+      </form>
+    </p>
   </modal-contact>
 
   <modal-download v-if="showDownloadModal" @close="showDownloadModal = false">
@@ -63,28 +84,23 @@
   </div>
 
   <div class="container-fluid image-summary">
-      <div class="row">
-        <div class="col-md-3 col-sm-4 img-container">
-          <img src="images/tooth-and-nail-jr-southard.jpg" width="250px" height="250px">
-        </div>
-        <div class="col-md-9 col-sm-8">
-          <h2 class="call-to-action">We would like to ask you to <em>share</em> the work on social media or <em>donate</em></h2>
-          <h3>You don’t have to but you will definitely earn some good art karma points and our deep appreciation :)</h3>
-          <div class="share-options">
-            <img src="/images/facebook.png" width="40px" height="40px">
-            |
-            <img src="/images/twitter.png" width="40px" height="40px">
-            | extra points for
-            <img src="/images/instagram.png" width="40px" height="40px">
-             share and DM us @1nfinite_1ndustries
-          </div>
-        </div>
-      </div>
+    <h2 class="call-to-share-and-donate">We would like to ask you to <em>share</em> the work on social media or <em>donate</em></h2>
+    <h3>You don’t have to but you will definitely earn some good art karma points and our deep appreciation :)</h3>
   </div>
 
 
+<div class="container-fluid share-and-donate">
 
-  <div class="container-fluid donate">
+  <div class="share-options">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Finfinite.industries" target="_new"><img src="/images/facebook.png" width="40px" height="40px" class="social-media-icon"></a>
+
+    <a href="https://twitter.com/intent/tweet?text=Check%20out%20the%20the%20work%20of%20Amanda%20Church%20on%20Infinite%20Industries%20http%3A%2F%2Finfinite.industries&via=1nfinite_1" target="_new"><img src="/images/twitter.png" width="40px" height="40px" class="social-media-icon"></a>
+     extra points for
+    <a href="https://www.instagram.com/1nfinite_1ndustries/" target="_new"><img src="/images/instagram.png" width="40px" height="40px" class="social-media-icon"></a>
+     share and DM us <a href="https://www.instagram.com/1nfinite_1ndustries/" target="_new">@1nfinite_1ndustries</a>
+  </div>
+
+  <div class="donate">
     <div class="donation-form-container">
       Choose Donation Amount:
       <input type="number" v-model="donationAmount">
@@ -96,12 +112,19 @@
     </div>
 
   </div>
+</div>
+
 
   <div class="container-fluid work-info">
     <p class="month">January-February 2017</p>
     <p class="title">Tooth and Nail (Kentucky/Pennsylvania) #3</p>
     <p class="artist-name">James R Southard</p>
+
+    <div class="img-container">
+      <img src="images/tooth-and-nail-jr-southard.jpg" width="250px" height="250px">
+    </div>
   </div>
+
 
   <div class="container distribution-options">
 
