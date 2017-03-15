@@ -22,15 +22,15 @@ router.post('/initiate-download-process', function(req, res, next){
 
 
 router.get('/error-general', function(req,res,next){
-  res.render('error');
+  res.render('error',{domain: process.env.DOMAIN});
 })
 
 router.get('/success-contact', function(req,res,next){
-  res.render('success-contact');
+  res.render('success-contact',{domain: process.env.DOMAIN});
 })
 
 router.get('/success-download', function(req,res,next){
-  res.render('success-download');
+  res.render('success-download',{domain: process.env.DOMAIN});
 })
 
 

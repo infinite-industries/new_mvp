@@ -123,7 +123,7 @@ em {
   font-size: 1.4em;
   line-height: 40px;
   margin-top: 10px;
-  font-family: Sanchez,Georgia,Cambria,"Times New Roman",Times,serif;
+  font-family: "Sanchez",Georgia,"Times New Roman",Times,serif;
   text-align: center;
 }
 
@@ -172,7 +172,7 @@ em {
   margin-left: auto;
   margin-right: auto;
   line-height: 35px;
-  font-family: Sanchez,Georgia,"Times New Roman",Times,serif;
+  font-family: "Sanchez",Georgia,"Times New Roman",Times,serif;
   margin-top: 30px;
 }
 
@@ -209,10 +209,50 @@ em {
 }
 
 /*--------------- Download view -------------- */
-.call-to-share-and-donate{
-  text-align: center;
-  padding-bottom: 15px;
+@media only screen and (min-width: 768px) {
+  .call-to-share-and-donate{
+    text-align: center;
+    padding-bottom: 15px;
+    font-size: 30px;
+    margin-top: 50px;
+  }
 }
+
+@media only screen and (max-width: 768px) {
+  .call-to-share-and-donate{
+    text-align: center;
+    padding-bottom: 15px;
+    font-size: 25px;
+    margin-top: 50px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .donation-input-element{
+    display: inline;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .donation-input-element{
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .share-element{
+    display: inline;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .share-element{
+    display: block;
+    margin-top: 20px;
+  }
+}
+
+
 
 .image-summary h3{
   text-align: center;
@@ -226,7 +266,7 @@ em {
 }
 
 .image-summary{
-  font-family: Sanchez,Georgia,Cambria,"Times New Roman",Times,serif;
+  font-family: "Sanchez",Georgia,"Times New Roman",Times,serif;
 }
 
 .image-summary em{
@@ -260,17 +300,42 @@ em {
   text-align: center;
 }
 
+
 .distribution-description{
-  font-family: Sanchez,Georgia,Cambria,"Times New Roman",Times,serif;
+  font-family: "Sanchez",Georgia,"Times New Roman",Times,serif;
   margin-top:30px;
   margin-bottom: 40px;
 }
 
+.distribution-description h3{
+  margin-bottom: 20px;
+}
+
+.distribution-description li{
+  font-family: "Sanchez",Georgia,"Times New Roman",Times,serif;
+  list-style-type: none;
+  font-size: 1.2em;
+}
+
+.distribution-description ul{
+  padding-left: 0px;
+}
+
 .additional-description{
-  font-family: Sanchez,Georgia,Cambria,"Times New Roman",Times,serif;
+  font-family: "Sanchez",Georgia,"Times New Roman",Times,serif;
   margin-top: 20px;
   margin-bottom: 40px;
   font-size: 1.2em;
+  max-width: 500px;
+  /*margin-left: auto;
+  margin-right: auto;*/
+}
+
+.digital-download-content{
+  margin-top: 20px;
+  max-width: 500px;
+  /*margin-left: auto;
+  margin-right: auto;*/
 }
 
 .donate p{

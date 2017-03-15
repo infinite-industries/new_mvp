@@ -6,7 +6,7 @@
     <title>Infinite.Industries: February 2017 Release</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Oswald:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Oswald:400,600,700|Arvo" rel="stylesheet">
 
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -64,10 +64,10 @@
 
   <div class="container-fluid navigation">
     <div class="row">
-      <div class="col-sm-1">
+      <div class="col-xs-1">
         <a href="./index.html" class="site-brand"><img src="images/site-logo.png" width="40px" height="40px"></a>
       </div>
-      <div class="col-sm-4 site-title">
+      <div class="col-sm-4 hidden-xs site-title">
         <a href="./index.html">Infinite Industries</a>
       </div>
       <div class="col-sm-2"></div>
@@ -84,7 +84,7 @@
   </div>
 
   <div class="container-fluid image-summary">
-    <h2 class="call-to-share-and-donate">We would like to ask you to <em>share</em> the work on social media or <em>donate</em></h2>
+    <h2 class="call-to-share-and-donate">We would like to ask you to <em>share</em> the work on social media and <em>donate</em></h2>
     <h3>You don’t have to but you will definitely earn some good art karma points and our deep appreciation :)</h3>
   </div>
 
@@ -97,14 +97,16 @@
     <a href="https://twitter.com/intent/tweet?text=Check%20out%20the%20the%20work%20of%20Amanda%20Church%20on%20Infinite%20Industries%20http%3A%2F%2Finfinite.industries&via=1nfinite_1" target="_new"><img src="/images/twitter.png" width="40px" height="40px" class="social-media-icon"></a>
      extra points for
     <a href="https://www.instagram.com/1nfinite_1ndustries/" target="_new"><img src="/images/instagram.png" width="40px" height="40px" class="social-media-icon"></a>
-     share and DM us <a href="https://www.instagram.com/1nfinite_1ndustries/" target="_new">@1nfinite_1ndustries</a>
+    <div class="share-element">
+      share and DM us <a href="https://www.instagram.com/1nfinite_1ndustries/" target="_new">@1nfinite_1ndustries</a>
+    </div>
   </div>
 
   <div class="donate">
     <div class="donation-form-container">
-      Choose Donation Amount:
-      <input type="number" v-model="donationAmount">
-      <a href="#" class="btn btn-info give-donation-btn" role="button" @click.prevent="processDonation()">GIVE</a>
+      <div class="donation-input-element"> Choose Donation Amount: </div>
+      <div class="donation-input-element"><input type="number" v-model="donationAmount"></div>
+      <div class="donation-input-element"><a href="#" class="btn btn-info give-donation-btn" role="button" @click.prevent="processDonation()">GIVE</a></div>
 
       <p>
         We are a non-profit organization with 501(C)(3) status. All your donations are tax deductable.
@@ -128,45 +130,36 @@
 
   <div class="container distribution-options">
 
-    <h3>Digital Download Content:</h3>
     <div class="row distribution-description">
-      <div class="col-sm-4">
-        2000 X 2000 JPEG
-      </div>
-      <div class="col-sm-8">
-        <p>
-          *Perfect for sharing with friends on social media
-        </p>
+      <div class="col-md-2 col-sm-1"></div>
+
+      <div class="col-md-3 col-sm-4">
+        <div class="digital-download-content">
+          <h3>Download Content:</h3>
+          <ul>
+              <li>2000 X 2000 JPEG</li>
+              <li>5000 X 5000 JPEG</li>
+              <li>FULL PRODUCTION REZ</li>
+              <li>License File</li>
+          </ul>
+        </div>
       </div>
 
+      <div class="col-sm-2"></div>
+
       <div class="col-sm-4">
-        5000 X 5000 JPEG
+        <div class="additional-description">
+          <h3>Additional Options:</h3>
+          <p>
+            No hastle <a href="https://www.levelframes.com/frames/new?level_id=35501" target="_new">print production and framing</a>
+          </p>
+          <p>
+            <a href="#" id="show-modal" @click="showContactModal = true">Contact us</a> for prints from the edition produced, proofed and signed by the artist
+          </p>
+        </div>
       </div>
-      <div class="col-sm-8">
-        <p>
-          *Can be used to create cellphone wallpaper or great for t-shirts and other fashion items
-        </p>
-      </div>
-      <div class="col-sm-4">
-        FULL PRODUCTION REZ
-      </div>
-      <div class="col-sm-8">
-        *All of the above plus exhibition copies
-      </div>
-      <div class="col-sm-4">
-      </div>
-      <div class="col-sm-8">
-        *Included in the Download
-      </div>
-    </div>
-    <h3>Additional Options:</h3>
-    <div class="additional-description">
-      <p>
-        No hastle <a href="https://www.levelframes.com/frames/new?level_id=35501" target="_new">print production and framing</a>
-      </p>
-      <p>
-        <a href="#" id="show-modal" @click="showContactModal = true">Contact us</a> for prints from the edition produced, proofed and signed by the artist
-      </p>
+
+      <div class="col-sm-1"></div>
     </div>
   </div>
 

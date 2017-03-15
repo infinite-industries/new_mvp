@@ -57,28 +57,33 @@ new Vue({
 
       })
       .then(function(response) {
-        console.log(response.status);
+        //console.log(response.status);
+        window.location.assign("/success-download");
       })
       .catch(function (error) {
-        console.log(error);
+        //console.log(error);
+        window.location.assign("/error-general");
       });
       this.showContactModal=false;
     },
     //collector provided her email and initiated download process
     initiateDownloadProcess: function(){
       //console.log(this.download.email);
+      this.showDownloadModal=false;
+
       axios.post('/direct-contact', {
         download_email: this.download.email,
         download_collectorAgreedToTerms: this.download.agreedToTerms,
         download_okToPutOnEmailList:this.download.okToPutOnEmailList
       })
       .then(function(response) {
-        console.log(response.status);
+        //console.log(response.status);
+        window.location.assign("/success-download");
       })
       .catch(function (error) {
-        console.log(error);
+        //console.log(error);
+        window.location.assign("/error-general");
       });
-      this.showDownloadModal=false;
 
     }
   }
