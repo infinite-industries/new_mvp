@@ -116,16 +116,33 @@ em {
   padding-bottom: 20px;
 }
 
-.intro-text p{
-  width:70%;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1.4em;
-  line-height: 40px;
-  margin-top: 10px;
-  font-family: "Sanchez",Georgia,"Times New Roman",Times,serif;
-  text-align: center;
+@media only screen and (min-width: 768px) {
+  .intro-text p{
+    width:70%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.4em;
+    line-height: 40px;
+    margin-top: 10px;
+    font-family: "Sanchez",Georgia,"Times New Roman",Times,serif;
+    text-align: center;
+  }
 }
+
+@media only screen and (max-width: 768px) {
+  .intro-text p{
+    width:85%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2em;
+    line-height: 35px;
+    margin-top: 10px;
+    font-family: "Sanchez",Georgia,"Times New Roman",Times,serif;
+    text-align: center;
+  }
+}
+
+
 
 .work-image{
   text-align: center;
@@ -367,9 +384,9 @@ em {
 }
 
 .modal-container {
-  width: 420px;
+  width: 380px;
   margin: 0px auto;
-  padding: 20px 30px;
+  padding: 10px 20px;
   background-color: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
