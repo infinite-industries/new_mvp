@@ -6,6 +6,8 @@ Will change the name of the repo later after everything is done and stabalized.
 
 
 #TODO:
-+validation
-+body fonts
-+layout for iPhone
+
+~+ body fonts~
+~+ layout for iPhone~
++ validation
++ Stripe webhook for payment processing

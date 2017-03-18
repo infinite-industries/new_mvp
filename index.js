@@ -20,6 +20,8 @@ app.use(express.static('public'));
 var routes= require('./routes/index');
 app.use('/', routes);
 
+var payments= require('./routes/payments');
+app.use('/process-payment', payments);
 
 app.use(function(req,res){
   res.render('404',{domain: process.env.DOMAIN});

@@ -5,8 +5,6 @@ var bodyParser = require('body-parser');
 var dotenv = require('dotenv');
 dotenv.load();      //get configuration file from .env
 
-//collector donated money -- worked through stripe
-
 //collector contacted I.I for work availability
 router.post('/direct-contact', function(req, res, next){
   console.log('contacted by'+req.body.collector_name);
@@ -18,8 +16,6 @@ router.post('/initiate-download-process', function(req, res, next){
   console.log('contacted by'+req.body.collector_email);
   res.json({"status":"success"})
 })
-
-
 
 router.get('/error-general', function(req,res,next){
   res.render('error',{domain: process.env.DOMAIN});

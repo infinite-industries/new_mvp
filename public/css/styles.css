@@ -80,6 +80,9 @@ em {
   letter-spacing: 2px;
 }
 
+.process-message{
+  text-align: center;
+}
 /*--------------- Navbar ---------------- */
 .navigation{
   margin-top: 10px;
@@ -113,7 +116,7 @@ em {
 
 .intro-text {
   padding-top: 30px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 @media only screen and (min-width: 768px) {
