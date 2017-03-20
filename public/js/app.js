@@ -21,13 +21,13 @@ var app = new Vue({
     showDownloadModal: false,
     donationAmount:null,
     download:{
-      email:" ",
+      email:"",
       agreedToTerms: false,
       okToPutOnEmailList: true,
     },
     directContact: {
-      name:" ",
-      email:" ",
+      name:"",
+      email:"",
       phone:null,
       notes:"..."
     },
@@ -102,7 +102,7 @@ var app = new Vue({
       })
       .then(function(response) {
         //console.log(response.status);
-        window.location.assign("/success-download");
+        window.location.assign("/success-contact");
       })
       .catch(function (error) {
         //console.log(error);
@@ -113,22 +113,25 @@ var app = new Vue({
     //collector provided her email and initiated download process
     initiateDownloadProcess: function(){
       //console.log(this.download.email);
-      this.showDownloadModal=false;
+      console.log(this.errors.has('download_email'));
+      if(!this.errors.has('download_email'))
+      {
+        this.showDownloadModal=false;
 
-      axios.post('/direct-contact', {
-        download_email: this.download.email,
-        download_collectorAgreedToTerms: this.download.agreedToTerms,
-        download_okToPutOnEmailList:this.download.okToPutOnEmailList
-      })
-      .then(function(response) {
-        //console.log(response.status);
-        window.location.assign("/success-download");
-      })
-      .catch(function (error) {
-        //console.log(error);
-        window.location.assign("/error-general");
-      });
-
+        axios.post('/initiate-download-process', {
+          download_email: this.download.email,
+          // download_collectorAgreedToTerms: this.download.agreedToTerms,
+          download_okToPutOnEmailList:this.download.okToPutOnEmailList
+        })
+        .then(function(response) {
+          //console.log(response.status);
+          window.location.assign("/success-download");
+        })
+        .catch(function (error) {
+          //console.log(error);
+          window.location.assign("/error-general");
+        });
+      }
     }
   }
 })

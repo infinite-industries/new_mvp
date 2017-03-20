@@ -12,3 +12,4 @@ Will change the name of the repo later after everything is done and stabalized.
 + validation
 + Stripe webhook for payment processing
 + revamp About page
++ revamp Contact page

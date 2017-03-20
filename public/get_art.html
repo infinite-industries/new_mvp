@@ -22,11 +22,11 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Oswald:400,600,700|Arvo" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 
     <script src="https://checkout.stripe.com/checkout.js"></script>
   </head>
@@ -66,15 +66,19 @@
     </p>
   </modal-contact>
 
+
   <modal-download v-if="showDownloadModal" @close="showDownloadModal = false">
 
     <h3 slot="header">Your Email</h3>
     <p>We will send you the download link to the email address provided</p>
-    <div><input type="text" v-model="download.email"></div>
+    <div class="download-email-input">
+      <input type="text" name="download_email" v-model="download.email" v-validate="'required|email'" data-vv-delay="1000" :class="{'input': true, 'input-error': errors.has('download_email'), 'no-input-error': !errors.has('download_email') }" type="text" placeholder="Your Email">
+      <p v-show="errors.has('download_email')" class="help is-danger">Please provide a valid email</p>
+    </div>
     <div><input type="checkbox" v-model="download.okToPutOnEmailList"> It is OK to occasionally send me updates via this email</div>
     <div><input type="checkbox" v-model="download.agreedToTerms"> I have read and agree to the terms of the license</div>
 
-    <a href="#" class="btn btn-info send-email-btn" role="button" @click.prevent="initiateDownloadProcess()">SEND</a>
+    <a href="#" v-show="download.agreedToTerms" class="btn btn-info send-email-btn" role="button" @click.prevent="initiateDownloadProcess()">SEND</a>
   </modal-download>
 
 
@@ -169,9 +173,9 @@
           <p>
             No hastle <a href="https://www.levelframes.com/frames/new?level_id=35502" target="_new">print production and framing</a>
           </p>
-          <p>
+          <!-- <p>
             <a href="#" id="show-modal" @click="showContactModal = true">Contact us directly</a> for prints from the edition produced, proofed and signed by the artist
-          </p>
+          </p> -->
         </div>
       </div>
 
@@ -180,7 +184,7 @@
   </div>
 
   <div class="container-fluid download">
-      <a href="#" class="btn btn-info init_download-btn" role="button" @click="showDownloadModal = true">GET DOWNLOAD LINK</a>
+      <a href="#" class="btn btn-active btn-info init_download-btn" role="button" @click="showDownloadModal = true">GET DOWNLOAD LINK</a>
   </div>
 
   <footer class="footer">
