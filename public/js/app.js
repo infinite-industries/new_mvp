@@ -36,7 +36,12 @@ var app = new Vue({
   },
   mounted: function(){
 
-    var stripe_pub_key = 'pk_test_AnN5EyTAXijWCz9NbgpDpGX4';
+    if((window.location.hostname=="infinite.industries")||(window.location.hostname=="www.infinite.industries")){
+      var stripe_pub_key = 'pk_live_NUkz1WdJ0HFmSwEyKetWuf8p';
+    }
+    else{
+      var stripe_pub_key = 'pk_test_AnN5EyTAXijWCz9NbgpDpGX4';
+    }
 
     this.stripe_instance = StripeCheckout.configure({
       name: 'INFINITE INDUSTRIES',
