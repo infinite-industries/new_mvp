@@ -3,7 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Infinite.Industries</title>
+    <title>Infinite.Industries: March 2017 Release</title>
+
+    <meta property="og:title" content="Infinite Industries" />
+    <meta property="og:url" content="https://infinite.industries" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Open Experiments in Art, Code and Culture. Infinite Industries is an experimental digital platform that makes high quality contemporary art accessible to everyone." />
+    <meta property="og:image" content="http://infinite.industries/public/images/infinite_logo_open_graph.png" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@1nfinite_1" />
+    <meta name="twitter:title" content="Infinite Industries" />
+    <meta name="twitter:description" content="Open Experiments in Art, Code and Culture. Infinite Industries is an experimental digital platform that makes high quality contemporary art accessible to everyone." />
+    <meta name="twitter:image" content="http://infinite.industries/public/images/infinite_logo_open_graph.png" />
+
+
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <link href="https://fonts.googleapis.com/css?family=Sanchez|Lato:400,400i,700,700i|Oswald:400,600,700" rel="stylesheet">
@@ -11,11 +26,15 @@
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/styles.css">
 
+    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+      #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+    </style>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
 <body>
-
 
   <div class="container-fluid navigation">
     <div class="row">
@@ -38,13 +57,7 @@
     </div>
   </div>
 
-
-
-
-  <div class="container intro-text">
     {% block content %}{% endblock %}
-  </div>
-
 
   <footer class="footer">
     <div class="footer-area">
@@ -63,6 +76,8 @@
       </div>
     </div>
   </footer>
+
+  {% block scripts %}{% endblock %}
 
 </body>
 </html>

@@ -17,6 +17,14 @@ router.post('/initiate-download-process', function(req, res, next){
   res.json({"status":"success"})
 })
 
+router.get('/contact', function(req,res,next){
+  res.render('contact',{domain: process.env.DOMAIN});
+})
+
+router.get('/about', function(req,res,next){
+  res.render('about',{domain: process.env.DOMAIN});
+})
+
 router.get('/error-general', function(req,res,next){
   res.render('error',{domain: process.env.DOMAIN});
 })

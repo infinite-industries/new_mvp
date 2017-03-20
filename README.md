@@ -11,3 +11,4 @@ Will change the name of the repo later after everything is done and stabalized.
 ~+ layout for iPhone~
 + validation
 + Stripe webhook for payment processing
++ revamp About page

@@ -13,13 +13,13 @@ router.post('/', function(req,res){
   var token_id = req.body.token_id;
   var purchase_price = Math.floor(req.body.price); //take care of the "awesome" Javascipt math
 
-  console.log(token_id +"\n"+ purchase_price  +"\n"+ process.env.STRIPE_SECRET_KEY );
+  //console.log(token_id +"\n"+ purchase_price  +"\n"+ process.env.STRIPE_SECRET_KEY );
 
   var charge = stripe.charges.create({
     amount: purchase_price, // Amount in cents
     currency: "usd",
     source: token_id,
-    description: "Donation Charge"
+    description: "Donation to Infinite Industries"
   }, function(err, charge) {
     if (err && err.type === 'StripeCardError') {
       // The card has been declined
