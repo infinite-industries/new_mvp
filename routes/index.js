@@ -3,12 +3,23 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var axios = require('axios');
 
+var slackMessenger = require('../services/slack_messenger');
+
 var dotenv = require('dotenv');
 dotenv.load();      //get configuration file from .env
 
 //collector contacted I.I for work availability
 router.post('/direct-contact', function(req, res, next){
   console.log('contacted by'+req.body.collector_name);
+
+  var contact_data={
+    collector_name: req.body.collector_name,
+    collector_email: req.body.collector_email,
+    collector_phone: req.body.collector_phone,
+    collector_notes: req.body.collector_notes
+  }
+  slackMessenger.newContact(contact_data);
+
   res.json({"status":"success"})
 })
 
@@ -29,13 +40,21 @@ router.post('/initiate-download-process', function(req, res, next){
     password: process.env.FILE_SERVER_KEY
   })
   .then(function (response) {
-    console.log(response);
+    if(response.status==200){
+
+      slackMessenger.newDownload(req.body.download_email,response.data.uuid,req.body.download_okToPutOnEmailList);
+      res.json({"status":"success"});
+    }
+    else{
+      res.json({"status":"error"});
+    }
+
   })
   .catch(function (error) {
     console.log(error);
+    res.json({"status":"error"});
   });
 
-  res.json({"status":"success"});
 })
 
 

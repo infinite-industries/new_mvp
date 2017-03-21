@@ -6,6 +6,7 @@ var dotenv = require('dotenv');
 dotenv.load();      //get configuration file from .env
 
 var stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+var slackMessenger = require('../services/slack_messenger');
 
 //collector donated money -- worked through stripe
 router.post('/', function(req,res){
@@ -39,5 +40,8 @@ router.get('/success', function(req,res){
 router.get('/failure', function(req,res){
   res.render('error',{domain: process.env.DOMAIN});
 })
+
+//webhook from Stripe - data on successfull charge of card
+      //slackMessenger.newOrder(contact_data);
 
 module.exports = router;

@@ -129,8 +129,13 @@ var app = new Vue({
           download_okToPutOnEmailList:this.download.okToPutOnEmailList
         })
         .then(function(response) {
-          //console.log(response.status);
-          window.location.assign("/success-download");
+          if(response.data.status==='success'){
+            window.location.assign("/success-download");
+          }
+          else{
+            window.location.assign("/error-general");
+          }
+
         })
         .catch(function (error) {
           //console.log(error);
