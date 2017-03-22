@@ -69,7 +69,7 @@
     <h3 slot="header">Your Email</h3>
     <p>We will send you the download link to the email address provided</p>
     <div class="download-email-input">
-      <input type="text" name="download_email" v-model="download.email" v-validate="'required|email'" data-vv-delay="1000" :class="{'input': true, 'input-error': errors.has('download_email'), 'no-input-error': !errors.has('download_email') }" placeholder="Your Email">
+      <input type="text" name="download_email" v-model.trim="download.email" v-validate="'required|email'" data-vv-delay="1000" :class="{'input': true, 'input-error': errors.has('download_email'), 'no-input-error': !errors.has('download_email') }" placeholder="Your Email">
       <p v-show="errors.has('download_email')" class="help is-danger">Please provide a valid email</p>
       <p v-show="!errors.has('download_email')" class="help">Email address required</p>
     </div>
