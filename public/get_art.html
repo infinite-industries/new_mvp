@@ -39,7 +39,7 @@
     <p>
         <div class="form-group">
           <div class="control-label" for="name">Name<em class="required-item">*</em></div>
-          <input type="text" placeholder="Your Full Name" name="contact_name" v-validate="'min:{length:1}'" data-vv-delay="1000" v-model="directContact.name">
+          <input type="text" placeholder="Your Full Name" name="contact_name" v-validate="'alpha_spaces'" data-vv-delay="1000" v-model="directContact.name">
           <p class="is-danger" v-if="errors.has('contact_name')">Please provide a valid contact name.</p>
         </div>
 
