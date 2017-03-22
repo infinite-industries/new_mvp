@@ -28,7 +28,6 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
 
-    <script src="https://checkout.stripe.com/checkout.js"></script>
   </head>
 <body>
 <!-- app -->
@@ -38,31 +37,29 @@
     <h3 slot="header">Contact Us for Artwork Availability and Pricing</h3>
 
     <p>
-      <form @submit.prevent="validateBeforeSubmit">
-
-        <div class="form-group" :class="{'has-error': errors.has('name') }">
-          <label class="control-label" for="name">Name:</label>
-          <input type="text" placeholder="Your Full Name" name="name" v-model="directContact.name">
-          <p class="text-danger" v-if="errors.has('name')">{{ errors.first('name') }}</p>
+        <div class="form-group">
+          <div class="control-label" for="name">Name<em class="required-item">*</em></div>
+          <input type="text" placeholder="Your Full Name" name="contact_name" v-validate="'min:{length:1}'" data-vv-delay="1000" v-model="directContact.name">
+          <p class="is-danger" v-if="errors.has('contact_name')">Please provide a valid contact name.</p>
         </div>
 
         <div class="form-group">
-          <label class="control-label" for="email">Email:</label>
+          <div class="control-label" for="email">Email<em class="required-item">*</em></div>
           <input type="text" name="email" v-validate="{ inital:'email', rules: { required: true} }" v-model="directContact.email">
         </div>
 
         <div class="form-group">
-          <label class="control-label" for="phone">Phone # (if preferable):</label><br />
+          <div class="control-label" for="phone">Phone # (optional)</div>
           <input type="text" name="phone" v-validate="{ inital:'email', rules: { required: true} }" v-model="directContact.phone">
         </div>
 
         <div class="form-group">
-          <label class="control-label" for="phone">Notes:</label>
-          <input type="text" name="notes" v-model="directContact.notes">
+          <div class="control-label" for="phone">Notes (optional)</div>
+          <textarea rows="3" cols="30" name="notes" v-model="directContact.notes"> </textarea>
         </div>
 
         <a href="#" @click.prevent="collectDirectContactInfo()" class="btn btn-info send-contact-btn" role="button">CONTACT</a>
-      </form>
+
     </p>
   </modal-contact>
 
@@ -72,13 +69,36 @@
     <h3 slot="header">Your Email</h3>
     <p>We will send you the download link to the email address provided</p>
     <div class="download-email-input">
-      <input type="text" name="download_email" v-model="download.email" v-validate="'required|email'" data-vv-delay="1000" :class="{'input': true, 'input-error': errors.has('download_email'), 'no-input-error': !errors.has('download_email') }" type="text" placeholder="Your Email">
+      <input type="text" name="download_email" v-model="download.email" v-validate="'required|email'" data-vv-delay="1000" :class="{'input': true, 'input-error': errors.has('download_email'), 'no-input-error': !errors.has('download_email') }" placeholder="Your Email">
       <p v-show="errors.has('download_email')" class="help is-danger">Please provide a valid email</p>
+      <p v-show="!errors.has('download_email')" class="help">Email address required</p>
     </div>
-    <div><input type="checkbox" v-model="download.okToPutOnEmailList"> It is OK to occasionally send me updates via this email</div>
-    <div><input type="checkbox" v-model="download.agreedToTerms"> I have read and agree to the terms of the license</div>
 
-    <a href="#" v-show="download.agreedToTerms" class="btn btn-info send-email-btn" role="button" @click.prevent="initiateDownloadProcess()">SEND</a>
+      <div class="contact-input-group">
+        <span>
+          <input type="checkbox" v-model="download.okToPutOnEmailList">
+        </span>
+        <p>
+          It is OK to occasionally send me updates via this email.
+        </p>
+      </div>
+
+      <div class="contact-input-group">
+        <span>
+          <input type="checkbox" v-model="download.agreedToTerms">
+        </span>
+        <p>
+          I have read and agree to the terms of <a href="https://infinite-industries.github.io/license/limited_license_agreement/" target="_new">the license</a>
+        </p>
+      </div>
+
+      <div class="text-right">
+          <a href="#" v-if="download.agreedToTerms&&fields.dirty('download_email')&&!errors.has('download_email')" class="btn btn-info send-email-btn" role="button" @click.prevent="initiateDownloadProcess()">SEND</a>
+          <span v-else class="hide-button">
+            <a href="#" class="btn btn-info send-email-btn" role="button">SEND</a>
+          </span>
+      </div>
+
   </modal-download>
 
 
@@ -160,7 +180,7 @@
               <li>2000 X 2000 JPEG</li>
               <li>5000 X 5000 JPEG</li>
               <li>FULL PRODUCTION REZ</li>
-              <li><a href="http://infinite.industries/license/limited_license_agreement/" target="_new">License File</a></li>
+              <li><a href="https://infinite-industries.github.io/license/limited_license_agreement/" target="_new">License File</a></li>
           </ul>
         </div>
       </div>
@@ -173,7 +193,7 @@
           <p>
             No hastle <a href="https://www.levelframes.com/frames/new?level_id=35502" target="_new">print production and framing</a>
           </p>
-          <p>
+          <p class="direct-contact-option">
             <a href="#" id="show-modal" @click="showContactModal = true">Contact us directly</a> for prints from the edition produced, proofed and signed by the artist
           </p>
         </div>
@@ -207,6 +227,7 @@
 
 </div>
 
+<script src="https://checkout.stripe.com/checkout.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/g/vee-validate@2.0.0-beta.25,vue@2.2.4"></script>
 

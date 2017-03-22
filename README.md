@@ -9,7 +9,11 @@ Will change the name of the repo later after everything is done and stabalized.
 
 ~+ body fonts~
 ~+ layout for iPhone~
-+ validation
++ validation for Contact Section
 + Stripe webhook for payment processing
 + revamp About page
 + revamp Contact page
++ add test-download-file.zip to S3
++ buttons css
++ create build process with Webpack
++ write tests

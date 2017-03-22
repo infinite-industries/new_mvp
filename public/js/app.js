@@ -29,7 +29,7 @@ var app = new Vue({
       name:"",
       email:"",
       phone:null,
-      notes:"..."
+      notes:""
     },
     stripe_instance: {},
     stripe_token: {}
@@ -118,8 +118,8 @@ var app = new Vue({
     //collector provided her email and initiated download process
     initiateDownloadProcess: function(){
       //console.log(this.download.email);
-      console.log(this.errors.has('download_email'));
-      if(!this.errors.has('download_email'))
+      //console.log(this.errors.has('download_email'));
+      if(!this.errors.has('download_email')&&this.fields.dirty('download_email'))
       {
         this.showDownloadModal=false;
 

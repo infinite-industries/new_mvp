@@ -1,6 +1,6 @@
 /*--------------- GENERAL ------------------- */
 body{
-  font-family: 'Lato', serif;
+  font-family: 'Lato', sans-serif;
 }
 
 h1, h2{
@@ -63,7 +63,7 @@ em {
 
 .text-controller{
   color: #C71585;
-  font-family: 'Lato', serif;
+  font-family: 'Lato', sans-serif;
   font-size: 18px;
   font-weight: bold;
 }
@@ -145,13 +145,30 @@ em {
   }
 }
 
-
-
 .work-image{
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+
+@media only screen and (min-width: 768px) {
+  .work-image img{
+    width:60%;
+    max-width: 600px;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .work-image img{
+    width:100%;
+    height: auto;
+  }
+}
+
+
+
 
 .work-info{
   padding-top: 15px;
@@ -234,7 +251,9 @@ em {
 /*--------------- Download view -------------- */
 
 .download-email-input{
+
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -304,7 +323,7 @@ em {
 .image-summary h3{
   font-size: 16px;
   margin-bottom: 20px;
-  font-family: 'Lato', serif;
+  font-family: 'Lato', sans-serif;
   color: #999;
   font-weight: bold;
 }
@@ -314,6 +333,8 @@ em {
   text-align: center;
   padding-bottom: 10px;
 }
+
+
 
 .donation-form-container{
   max-width: 600px;
@@ -375,6 +396,13 @@ em {
   margin-bottom: 5px;
 }
 
+.direct-contact-option{
+  margin-top: 30px;
+}
+
+.required-item{
+  color: #C71585;
+}
 /*--------------- Contact Modal -------------- */
 
 .modal-mask {
@@ -403,7 +431,8 @@ em {
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   transition: all .3s ease;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1em;
 }
 
 .modal-header h3 {
@@ -466,4 +495,20 @@ input:focus {
 
 .activated{
   background-color: blue;
+}
+
+.help{
+  font-size: 0.8em
+}
+
+.contact-input-group span{
+  float:left;
+}
+.contact-input-group p{
+  padding-left: 30px;
+}
+
+.hide-button a:link, .hide-button a:visited, .hide-button a:hover, .hide-button a:active{
+  color: #aaa;
+  background-color: #ccc
 }
