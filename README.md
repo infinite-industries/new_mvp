@@ -9,13 +9,18 @@ Will change the name of the repo later after everything is done and stabalized.
 
 ~+ body fonts~
 ~+ layout for iPhone~
++ rewrite for get_art page
++ move social media sharing to Download page
++ Fix Facebook Card
++ Stripe webhook for payment processing
 + validation for Contact Section
 + add test-download-file.zip to S3
 + create build process with Webpack
 + write tests
-+ Stripe webhook for payment processing
+
 
 + revamp About page
 + revamp Contact page
-+ bring send button up in download generation window for mobile only
++ solve mystery of logo click
++ bring send button up in download generation modal for mobile only
 + buttons css

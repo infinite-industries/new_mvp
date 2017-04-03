@@ -64,7 +64,7 @@ router.get('/contact', function(req,res,next){
 })
 
 router.get('/about', function(req,res,next){
-  res.render('about',{domain: process.env.DOMAIN});
+  res.render('about',{domain: process.env.DOMAIN, current_page: 'about'});
 })
 
 router.get('/error-general', function(req,res,next){

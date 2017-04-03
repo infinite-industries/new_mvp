@@ -19,7 +19,7 @@ var app = new Vue({
   data: {
     showContactModal: false,
     showDownloadModal: false,
-    donationAmount:null,
+    donationAmount: '1.00',
     download:{
       email:"",
       agreedToTerms: false,
