@@ -1,121 +1,151 @@
-{% extends "templates/_pages.html" %}
+{% extends "templates/_pages.html" %} {% block content %}
 
-{% block content %}
 <body>
 
-  <div class="container">
-
-    <div class="row">
-      <div class="col-md-1 hidden-sm"></div>
-      <div class="col-md-10">
-        <h3 class="process-message">About Us</h3>
-        <p class="lead">
-          Infinite Industries is an experimental digital platform that makes high quality contemporary art accessible to everyone.
-        </p>
-        <br />
-        <p class="question">
-          Wow, sounds like a pretty lofty goal. Why should I care about this “contemporary art” thing in the first place?
-        </p>
-        <p class="answer">
-          In the world full of dumbed-down political slogans and light-speed advertisement campaigns it is important to cultivate a few islands of introspection. You don’t need to care all the time but every once in awhile, it is healthy to switch gears and look at the world in a different way - “contemporary art” offers us this chance.
-        </p>
-
-        <br />
-        <p class="question">
-          So, really, everyone?
-        </p>
-        <p class="answer">
-          Pretty much. We try to keep explanations, art-jargon-free, and prices low. The content, however, is in no way watered-down. Some of it is pretty challenging, so you still need to make the effort. Not a passive entertainment sorda thing but definitely very open.
-          We are counting on you to engage with the work and make it your own.
-        </p>
-
-        <br />
-        <p class="question">
-          Who is the "we" behind the project?
-        </p>
-        <p class="answer">
-          Infinite Industries was created by Dima Strakovsky, together with a number of amazing friendly forces. Dima has done a bunch of work in the tech and design industry and has produced and curated art for over a decade. He is even writing this text in third person right now. Wait, this feels wrong... Switching to I for a second.
-          <br />
-          <br />
-          I teach art and I make art. I ran an <a href="http://bit.ly/2ii2n2l" target="_new">art space</a> for a number of years. I have enough technological know-how to cobble together a site that you are currently experiencing. I feel strongly that there has to be a better way to deliver art experiences to a much wider audiences, especially outside of major urban areas. Luckily I have a number of friends who have listened to me, helped me shape and produce this idea, and are now actively involved in the whole process.
-          <br />
-          <br />
-          Here is a video in which I try to explain the whole thing. Feel free to <a href="./contact.html">reach out</a> with any questions.
-        </p>
-        <p class="text-center">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/yGmq-3Zyh1E" frameborder="0" allowfullscreen></iframe>
-        </p>
-
-        <br />
-        <p class="question">
-          I get to have digital source files. How do I actually use them?
-        </p>
-        <p class="answer">
-          When you purchase the digital download, you are getting a large (tens of MB) file that can be used to print out your personal copy of the work. This file comes together with a <a href="http://infinite.industries/license/limited_license_agreement/" target="_new">personal production license</a>. This license allows you to create unlimited output based on this image for personal consumption only. In other words, you can make a print and put it on your wall but you can’t later resell the print.
-          <br />
-          <br />
-          Included in the download are a number of lower resolution files that can be used to create custom wallpaper for your phone, computer, put an image on a t-shirt, or just share it.
-          <br />
-          <br />
-          If you would like to create wallpaper for your phone or computer, you would need to resize the images. Pretty much similar process The process is similar for t-shirts and framed prints and any other fashion items. We will be providing some tutorials on how to do this and, of course, if you don’t want to resize, adjust or upload the images yourself, we will have several one-click options on our site in the near future.
-        </p>
-
-        <br />
-        <p class="question">
-          I want to make sure my money goes to the artists. How do artists get paid?
-        </p>
-        <p class="answer">
-          Artists get paid in a two-part system. Flat fee for the release of the digital image and 60% or more of the profit from other types of distribution methods like t-shirts, fashion merch and custom commission work. All purchases and donations go towards sustaining and promotion of individual artists’ production.
-        </p>
-
-        <br />
-        <p class="question">
-          Are you guys a for profit company? Who stands to gain if you succeed?
-        </p>
-        <p class="answer">
-          Nope. A 501(c3) non-profit. All the code that is being developed is open source and, once we lock down a mature code base and have solid data on digital collectors’ needs and wants, we will push it out to the world to share. Our goal is to fundamentally change the conversation around artwork distribution, not to create a <a href="https://en.wikipedia.org/wiki/Category_killer" target="_new">category killer</a>.
-          <br />
-          <br />
-          We believe that artists, small and mid-tier galleries, and younger collectors will be the key beneficiaries of this endeavor.
-        </p>
-
-        <br />
-        <p class="question">
-          I am an art world insider. Have seen a bunch of projects with similar claims. Is there something new that you are bringing to the table?
-        </p>
-        <p class="answer">
-          In short, yes. Digital-first open distribution of art is very different from anything that currently defines art market practices.  Here is a <a href="http://bit.ly/2hO8BDv" target="_new"> longer explanation</a> that dives a little deeper into the details and the context of the market practices.
-        </p>
-
-        <br />
-        <p class="question">
-          Finally, why Kentucky address? Not exactly the center of the art world.
-        </p>
-        <p class="answer">
-          Interwebz are grand and we plan to work with artists from all over the world. It’s a cheaper zip code than most of the world’s art capitals and we think that our geographic location adds quite a bit to the diversity of views and places that should make up the contemporary art world conversation.
-        </p>
-        <br />
-        <br />
-        <br />
-      </div>
-      <div class="col-md-1 hidden-sm"></div>
+    <div class="container-fluid navigation">
+        <div class="row">
+            <div class="col-xs-1">
+                <a href="./index.html" class="site-brand"><img src="images/site-logo.png" width="40px" height="40px"></a>
+            </div>
+            <div class="col-sm-4 site-title hidden-xs">
+                <a href="./index.html">Infinite Industries</a>
+            </div>
+            <div class="col-sm-2 hidden-xs"></div>
+            <div class="col-sm-5 col-xs-11">
+                <div class="nav-area">
+                    <ul>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="https://medium.com/infinite-industries" target="_new">Blog</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
-</div>
-<!-- Begin MailChimp Signup Form -->
-<div id="mc_embed_signup">
-<form action="//industries.us13.list-manage.com/subscribe/post?u=55944da642302ef43bc8c0f27&amp;id=e396044372" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    <div id="mc_embed_signup_scroll">
-  <label for="mce-EMAIL">Subscribe to our mailing list</label>
-  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_55944da642302ef43bc8c0f27_e396044372" tabindex="-1" value=""></div>
-    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    <div class="container-fluid" id="about-text">
+        <p id="about-intro"> <strong> Infinite Industries </strong>is an experimental, digital platform that makes high-quality, contemporary art accessible to everyone.
+            <br>
+            <br>
+            <a href="#">Tool-making </a> |
+            <a href="#">Download </a> |
+
+            <a href="#">Distributing Information </a> |
+            <a href="#">Curation </a>
+        </p>
+
+        <h3> Who are "we?"</h3>
+
+        <p>
+            Infinite Industries is an organization created by Dima Strakovsky and a number of amazing friendly forces. Dima has worked extensively in the tech and design industry; he has also produced, taught, and curated art for over a decade. This project is a 501(c)(3) non-profit.
+        </p>
+        <p>
+            During his years running an <a href="http://bit.ly/2ii2n2l">art space</a>, Dima came to strongly believe that there are better ways to experience art than just in brick-and-mortar galleries. He also wanted to reach a more diverse audience, particularly those outside major urban areas. Luckily, the aforementioned friendly forces agreed with him, and now are actively involved in bringing this art to you. The content is intellectually challenging, high-quality, and never watered-down.
+        </p>
+
+        <h3> What do you mean when you say "contemporary" art? </h3>
+
+        <p>
+            Contemporary art is a term taken for granted within inner art circles, but what does it mean? Put simply, contemporary art is art that is being made right now. Technically, we could call this kitten poster “contemporary art.” Its meaning, however, can change based on the environment surrounding it.
+        </p>
+        <p>
+            Contemporary art also builds off of the works of its predecessors. It takes previous works and uses them as a context to evolve from.
+        </p>
+        <p>
+            Take the images below: what would the message be if the kitten poster was seen at a protest for animal rights? In a pre-teen’s bedroom? Placing the art in different environments adds to the context of a piece, which the audience can then use to further contemplate the work.
+        </p>
+        <figure>
+            <img src="/public/images/kitten_gif.gif" style="width: 450px;" class="" />
+            <figcaption>Our perception of the kitten changes within different cultural contexts.</figcaption>
+        </figure>
+
+
+        <p>
+            Even if the image is abstract, we still view it in the context of previous, similar works--it’s “peers.”
+        </p>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <figure>
+                    <img src="http://68.media.tumblr.com/fd18657d992c65082ac85235a0bf6733/tumblr_ohwqf7b7tx1suuc8do1_500.jpg" style="height: 200px;" />
+                    <figcaption>El Lisitsky 1920’s</figcaption>
+                </figure>
+
+            </div>
+            <div class="col-sm-4">
+                <figure>
+                    <img src="http://cdn1.walkerart.org/public/collections-thumbs/wac_230/740x536.jpeg" style="height: 200px;" />
+                    <figcaption>Ellsworth Kelly 1960’s</figcaption>
+                </figure>
+
+            </div>
+            <div class="col-sm-4">
+                <figure>
+                    <img src="http://images.tate.org.uk/sites/default/files/styles/grid-normal-8-cols/public/images/tomma-abts-ebe_0.jpg?itok=Jyil_8o0" style="height: 200px;" />
+                    <figcaption>Tomma Abst 2000’s</figcaption>
+                </figure>
+            </div>
+        </div>
+        <br>
+        <p>
+            Feel free to <a href="http://infinite.industries/contact.html">reach out</a> with any questions.
+        </p>
+
+        <h3> So, really everyone? </h3>
+        <p>
+            Yes! We aim to keep explanations simple and prices low, and encourage an open, active form of art appreciation where you engage with the work and make it your own.
+        </p>
+        <p>
+            We believe that artists, small and mid-tier galleries, and younger collectors will be the key beneficiaries of this endeavor, but our project can benefit anyone who enjoys art. Most of us don’t have the funds to spend thousands on a piece of art, but that shouldn’t mean that art is exclusive to those with larger cash flows.
+        </p>
+
+        <h3>Once I download the digital files, how do I actually use them?</h3>
+
+        <p>
+            When you download the artwork, you get a large file that can be printed out as your own copy of the work. The file is made legally available through a <a href="http://infinite.industries/license/limited_license_agreement/">personal production license</a>, which allows you to produce prints of the image for personal use only. In other words, you can make a print to hang on your wall, but you can’t sell it.
+        </p>
+
+        <p>
+            Included in the download are a number of lower-resolution files that can be used to customize any number of things: phone wallpapers, t-shirts, stickers--even shareable images.
+        </p>
+
+        <p>
+            If you would like to create wallpaper for your phone or computer, you would need to resize the images. The process is similar for applying it to t-shirts and framed prints, as well as any items you might want to apply it to. We will be providing some tutorials on how to do this and, of course, if you don’t want to resize or adjust the images yourself, we will have several one-click options on our site in the near future.
+        </p>
+
+        <h3>I want to make sure my money goes to the artists. How do they get paid?</h3>
+
+        <p>
+            Artists get paid in a two-part system. Artists receive a base fee for making their work available on our site. All purchases and donations go towards sustaining and promotion of individual artists’ production.
+        </p>
+
+        <h3>Are you guys a for profit company? Who stands to gain if you succeed?</h3>
+
+        <p>
+            Nope. A 501(c3) non-profit. All the code that is being developed is open source and, once we lock down a mature code base and have solid data on digital collectors’ needs and wants, we will push it out to the world to share. Our goal is to fundamentally change the conversation around artwork distribution, not to create a <a href="https://en.wikipedia.org/wiki/Category_killer">category killer</a>.
+        </p>
+
+        <p>
+            Nope. We are a 501(c3) non-profit. A large part of our activities is the development of software tools. We release these to the world as open-source, where fellow nerds can look at this code and create their own projects and variations on what we created. It’s kind of like creating and sharing a recipe for your favorite chocolate chip cookies, then letting others bake and taste their own. Sometimes people even create and share their own variations of your recipe.
+        </p>
+
+        <p>
+            Our goal is to promote and share ideas that reimagine artwork distribution, not to create a category killer.
+        </p>
+
+        <h3>
+I am an art world insider. I have seen a bunch of projects with similar claims. Is there something new that you are bringing to the table?
+</h3>
+
+        <p>
+            Yes. Digital-first, open distribution of art is very different from anything that currently defines art market practices. Here is a <a href="http://bit.ly/2hO8BDv">longer explanation</a> that dives a little deeper into the details and context of the market practices.
+        </p>
+
+        <p>
+            We aim to modernize the distribution of art through digital media, while still maintaining the integrity of the original artwork.
+        </p>
     </div>
-</form>
-</div>
 
-{% endblock %}
+</body>
 
-{% block scripts %}
-{% endblock %}
+{% endblock %} {% block scripts %} {% endblock %}

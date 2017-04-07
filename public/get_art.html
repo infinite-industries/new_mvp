@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Infinite.Industries: March-April 2017 Release</title>
@@ -28,238 +29,253 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
 
-  </head>
+</head>
+
 <body>
-<!-- app -->
-<div id="app">
-  <modal-contact v-if="showContactModal" @close="showContactModal = false">
+    <!-- app -->
+    <div id="app">
+        <modal-contact v-if="showContactModal" @close="showContactModal = false">
 
-    <h3 slot="header">Contact Us for Artwork Availability and Pricing</h3>
+            <h3 slot="header">Contact Us for Artwork Availability and Pricing</h3>
 
-    <p>
-        <div class="form-group">
-          <div class="control-label" for="name">Name<em class="required-item">*</em></div>
-          <input type="text" placeholder="Your Full Name" name="contact_name" v-validate="'alpha_spaces'" data-vv-delay="1000" v-model="directContact.name">
-          <p class="is-danger" v-if="errors.has('contact_name')">Please provide a valid contact name.</p>
-        </div>
+            <p>
+                <div class="form-group">
+                    <div class="control-label" for="name">Name<em class="required-item">*</em></div>
+                    <input type="text" placeholder="Your Full Name" name="contact_name" v-validate="'alpha_spaces'" data-vv-delay="1000" v-model="directContact.name">
+                    <p class="is-danger" v-if="errors.has('contact_name')">Please provide a valid contact name.</p>
+                </div>
 
-        <div class="form-group">
-          <div class="control-label" for="email">Email<em class="required-item">*</em></div>
-          <input type="text" name="email" v-validate="{ inital:'email', rules: { required: true} }" v-model="directContact.email">
-        </div>
+                <div class="form-group">
+                    <div class="control-label" for="email">Email<em class="required-item">*</em></div>
+                    <input type="text" name="email" v-validate="{ inital:'email', rules: { required: true} }" v-model="directContact.email">
+                </div>
 
-        <div class="form-group">
-          <div class="control-label" for="phone">Phone # (optional)</div>
-          <input type="text" name="phone" v-validate="{ inital:'email', rules: { required: true} }" v-model="directContact.phone">
-        </div>
+                <div class="form-group">
+                    <div class="control-label" for="phone">Phone # (optional)</div>
+                    <input type="text" name="phone" v-validate="{ inital:'email', rules: { required: true} }" v-model="directContact.phone">
+                </div>
 
-        <div class="form-group">
-          <div class="control-label" for="phone">Notes (optional)</div>
-          <textarea rows="3" cols="30" name="notes" v-model="directContact.notes"> </textarea>
-        </div>
+                <div class="form-group">
+                    <div class="control-label" for="phone">Notes (optional)</div>
+                    <textarea rows="3" cols="30" name="notes" v-model="directContact.notes"> </textarea>
+                </div>
 
-        <a href="#" @click.prevent="collectDirectContactInfo()" class="btn btn-info send-contact-btn" role="button">CONTACT</a>
+                <a href="#" @click.prevent="collectDirectContactInfo()" class="btn send-contact-btn" role="button">CONTACT</a>
 
-    </p>
-  </modal-contact>
+            </p>
+        </modal-contact>
 
 
-  <modal-download v-if="showDownloadModal" @close="showDownloadModal = false">
+        <modal-download v-if="showDownloadModal" @close="showDownloadModal = false">
 
-    <h3 slot="header">Your Email</h3>
-    <p>We will send you the download link to the email address provided</p>
-    <div class="download-email-input">
-      <input type="text" name="download_email" v-model.trim="download.email" v-validate="'required|email'" data-vv-delay="1000" :class="{'input': true, 'input-error': errors.has('download_email'), 'no-input-error': !errors.has('download_email') }" placeholder="Your Email">
-      <p v-show="errors.has('download_email')" class="help is-danger">Please provide a valid email</p>
-      <p v-show="!errors.has('download_email')" class="help">Email address required</p>
-    </div>
+            <h3 slot="header">Your Email</h3>
+            <p>We will send you the download link to the email address provided</p>
+            <div class="download-email-input">
+                <input type="text" name="download_email" v-model.trim="download.email" v-validate="'required|email'" data-vv-delay="1000" :class="{'input': true, 'input-error': errors.has('download_email'), 'no-input-error': !errors.has('download_email') }" placeholder="Your Email">
+                <p v-show="errors.has('download_email')" class="help is-danger">Please provide a valid email</p>
+                <p v-show="!errors.has('download_email')" class="help">Email address required</p>
+            </div>
 
-      <div class="contact-input-group">
-        <span>
+            <div class="contact-input-group">
+                <span>
           <input type="checkbox" v-model="download.okToPutOnEmailList">
         </span>
-        <p>
-          It is OK to occasionally send me updates via this email.
-        </p>
-      </div>
+                <p>
+                    It is OK to occasionally send me updates via this email.
+                </p>
+            </div>
 
-      <div class="contact-input-group">
-        <span>
+            <div class="contact-input-group">
+                <span>
           <input type="checkbox" v-model="download.agreedToTerms">
         </span>
-        <p>
-          I have read and agree to the terms of <a href="https://infinite-industries.github.io/license/limited_license_agreement/" target="_new">the license</a>
-        </p>
-      </div>
+                <p>
+                    I have read and agree to the terms of <a href="https://infinite-industries.github.io/license/limited_license_agreement/" target="_new">the license</a>
+                </p>
+            </div>
 
-      <div class="text-right">
-          <a href="#" v-if="download.agreedToTerms&&fields.dirty('download_email')&&!errors.has('download_email')" class="btn btn-info send-email-btn" role="button" @click.prevent="initiateDownloadProcess()">SEND</a>
-          <span v-else class="hide-button">
-            <a href="#" class="btn btn-info send-email-btn" role="button">SEND</a>
+            <div class="text-right">
+                <a href="#" v-if="download.agreedToTerms&&fields.dirty('download_email')&&!errors.has('download_email')" class="btn send-email-btn" role="button" @click.prevent="initiateDownloadProcess()">SEND</a>
+                <span v-else class="hide-button">
+            <a href="#" class="btn send-email-btn" role="button">SEND</a>
           </span>
-      </div>
+            </div>
 
-  </modal-download>
+        </modal-download>
 
 
-  <div class="container-fluid navigation">
-    <div class="row">
-      <div class="col-xs-1">
-        <a href="./index.html" class="site-brand"><img src="images/site-logo.png" width="40px" height="40px"></a>
-      </div>
-      <div class="col-sm-4 site-title hidden-xs">
-        <a href="./index.html">Infinite Industries</a>
-      </div>
-      <div class="col-sm-2 hidden-xs"></div>
-      <div class="col-sm-5 col-xs-11">
-        <div class="nav-area">
-          <ul>
-            <li><a href="/about">About</a></li>
-            <li><a href="https://medium.com/infinite-industries" target="_new">Blog</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
+        <div class="container-fluid navigation">
+            <div class="row">
+                <div class="col-xs-1">
+                    <a href="./index.html" class="site-brand"><img src="images/site-logo.png" width="40px" height="40px"></a>
+                </div>
+                <div class="col-sm-4 site-title hidden-xs">
+                    <a href="./index.html">Infinite Industries</a>
+                </div>
+                <div class="col-sm-2 hidden-xs"></div>
+                <div class="col-sm-5 col-xs-11">
+                    <div class="nav-area">
+                        <ul>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="https://medium.com/infinite-industries" target="_new">Blog</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="container-fluid image-summary">
-    <h2 class="call-to-share-and-donate">Before downloading, we would like to ask you to <em>donate</em></h2>
-    <h3>You don’t have to but you will definitely earn some good art karma points and our deep appreciation :)</h3>
-  </div>
-
-
-<div class="container-fluid share-and-donate">
-
-  <div class="donate">
-    <div class="donation-form-container">
-      <div class="donation-input-element"> Choose Donation Amount: </div>
-      <div class="donation-input-element"><input type="number" v-model="donationAmount"></div>
-      <div class="donation-input-element"><a href="#" class="btn btn-info give-donation-btn" role="button" @click.prevent="processDonation()">GIVE</a></div>
-
-      <p>
-        We are a non-profit organization with 501(C)(3) status. All your donations are tax deductable.
-      </p>
-    </div>
-
-  </div>
-</div>
-
-
-  <div class="container-fluid work-info">
-    <p class="month">March-April 2017</p>
-    <p class="title">Cartoon Bubble Sunset</p>
-    <p class="artist-name">Amanda Church</p>
-
-    <div class="img-container">
-      <img src="/images/cartoon-bubble-sunset.jpg" width="250px" height="250px">
-    </div>
-  </div>
-
-
-  <div class="container distribution-options">
-
-    <div class="row distribution-description">
-      <div class="col-md-2 col-sm-1"></div>
-
-      <div class="col-md-3 col-sm-4">
-        <div class="digital-download-content">
-          <h3>Download Content:</h3>
-          <ul>
-              <li>2000 X 2000 JPEG</li>
-              <li>5000 X 5000 JPEG</li>
-              <li>FULL PRODUCTION REZ</li>
-              <li><a href="https://infinite-industries.github.io/license/limited_license_agreement/" target="_new">License File</a></li>
-          </ul>
+        <div class="container-fluid image-summary">
+            <h2 class="call-to-share-and-donate">Before downloading, we would like to ask you to <em>donate</em></h2>
+            <h3>You don’t have to but you will definitely earn some good art karma points and our deep appreciation :)</h3>
         </div>
-      </div>
 
-      <div class="col-sm-2"></div>
 
-      <div class="col-sm-4">
-        <div class="additional-description">
-          <h3>Additional Options:</h3>
-          <p>
-            No hastle <a href="https://www.levelframes.com/frames/new?level_id=35502" target="_new">print production and framing</a>
-          </p>
-          <p class="direct-contact-option">
-            <a href="#" id="show-modal" @click="showContactModal = true">Contact us directly</a> for prints from the edition produced, proofed and signed by the artist
-          </p>
+        <div class="container-fluid share-and-donate">
+
+            <div class="donate">
+                <div class="donation-form-container">
+                    <div class="donation-input-element"> Choose Donation Amount: </div>
+                    <div class="donation-input-element">
+                        <input type="number" v-model="donationAmount">
+                    </div>
+                    <div class="donation-input-element"><a href="#" class="btn give-donation-btn" role="button" @click.prevent="processDonation()">GIVE</a></div>
+
+                    <p>
+                        We are a non-profit organization with 501(C)(3) status. All your donations are tax deductable.
+                    </p>
+                </div>
+
+            </div>
         </div>
-      </div>
 
-      <div class="col-sm-1"></div>
-    </div>
-  </div>
 
-  <div class="container-fluid download">
-      <a href="#" class="btn btn-active btn-info init_download-btn" role="button" @click="showDownloadModal = true">GET DOWNLOAD LINK</a>
-  </div>
+        <div class="container-fluid work-info">
+            <p class="month">March-April 2017</p>
+            <p class="title">Cartoon Bubble Sunset</p>
+            <p class="artist-name">Amanda Church</p>
 
-  <footer class="footer">
-    <div class="footer-area">
-      <div class="container text-center">
-        <ul class="social-media-list" style="padding-left:0px">
-          <li>
-            <a href="https://www.facebook.com/Infinite-Industries-1041120505976874/" target="_new" class="social-media-i"><i class="fa fa-facebook-official" style="font-size:40px"></i></a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/1nfinite_1ndustries/" target="_new" class="social-media-i"><i class="fa fa-instagram" style="font-size:40px"></i></a>
-          </li>
-          <li>
-            <a href="https://twitter.com/1nfinite_1" target="_new" class="social-media-i"><i class="fa fa-twitter" style="font-size:40px"></i></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-
-</div>
-
-<script src="https://checkout.stripe.com/checkout.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="https://cdn.jsdelivr.net/g/vee-validate@2.0.0-beta.25,vue@2.2.4"></script>
-
-<script src="js/app.js"></script>
-
-<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '769304786590904'); // Insert your pixel ID here.
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=769304786590904&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
-
-<!-- template for the modal component -->
-<script type="text/x-template" id="modal-template">
-<transition name="modal">
-  <div class="modal-mask">
-    <div class="modal-wrapper">
-      <div class="modal-container">
-
-        <div class="modal-header">
-          <div class="close-me" @click="$emit('close')">[hide]</div>
-          <slot name="header">
-            default header
-          </slot>
+            <div class="img-container">
+                <img src="/images/cartoon-bubble-sunset.jpg" width="250px" height="250px">
+            </div>
         </div>
-        <div class="modal-body">
-          <slot>
-            default body
-          </slot>
+
+
+        <div class="container distribution-options">
+
+            <div class="row distribution-description">
+                <div class="col-md-2 col-sm-1"></div>
+
+                <div class="col-md-3 col-sm-4">
+                    <div class="digital-download-content">
+                        <h3>Download Content:</h3>
+                        <ul>
+                            <li>2000 X 2000 JPEG</li>
+                            <li>5000 X 5000 JPEG</li>
+                            <li>FULL PRODUCTION REZ</li>
+                            <li><a href="https://infinite-industries.github.io/license/limited_license_agreement/" target="_new">License File</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-4">
+                    <div class="additional-description">
+                        <h3>Additional Options:</h3>
+                        <p>
+                            No hastle <a href="https://www.levelframes.com/frames/new?level_id=35502" target="_new">print production and framing</a>
+                        </p>
+                        <p class="direct-contact-option">
+                            <a href="#" id="show-modal" @click="showContactModal = true">Contact us directly</a> for prints from the edition produced, proofed and signed by the artist
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-sm-1"></div>
+            </div>
         </div>
-      </div>
+
+        <div class="container-fluid download">
+            <a href="#" class="btn btn-active init_download-btn" role="button" @click="showDownloadModal = true">GET DOWNLOAD LINK</a>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-area">
+                <div class="container text-center">
+                    <ul class="social-media-list" style="padding-left:0px">
+                        <li>
+                            <a href="https://www.facebook.com/Infinite-Industries-1041120505976874/" target="_new" class="social-media-i"><i class="fa fa-facebook-official" style="font-size:40px"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/1nfinite_1ndustries/" target="_new" class="social-media-i"><i class="fa fa-instagram" style="font-size:40px"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/1nfinite_1" target="_new" class="social-media-i"><i class="fa fa-twitter" style="font-size:40px"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
     </div>
-  </div>
-</transition>
-</script>
+
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/g/vee-validate@2.0.0-beta.25,vue@2.2.4"></script>
+
+    <script src="js/app.js"></script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window,
+            document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '769304786590904'); // Insert your pixel ID here.
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=769304786590904&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <!-- template for the modal component -->
+    <script type="text/x-template" id="modal-template">
+        <transition name="modal">
+            <div class="modal-mask">
+                <div class="modal-wrapper">
+                    <div class="modal-container">
+
+                        <div class="modal-header">
+                            <div class="close-me" @click="$emit('close')">[hide]</div>
+                            <slot name="header">
+                                default header
+                            </slot>
+                        </div>
+                        <div class="modal-body">
+                            <slot>
+                                default body
+                            </slot>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition>
+    </script>
 
 </body>
+
 </html>
