@@ -167,6 +167,24 @@ em {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .get-artwork-btn-container-mobile{
+    visibility: visible;
+  }
+  .get-artwork-btn-container-desktop{
+    visibility: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .get-artwork-btn-container-mobile{
+    visibility: hidden;
+  }
+  .get-artwork-btn-container-desktop{
+    visibility: none;
+  }
+}
+
 
 
 
