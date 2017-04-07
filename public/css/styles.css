@@ -1,37 +1,59 @@
 /*--------------- GENERAL ------------------- */
-body{
-  font-family: 'Lato', sans-serif;
+
+body {
+    font-family: 'Lato', sans-serif;
 }
 
-h1, h2{
-  font-family: 'Oswald', sans-serif;
-  font-weight: 700;
+h1,
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
 }
 
-h3, h4 {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 400;
+h3,
+h4 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
 }
 
-a:link, a:visited{
-  color: #C71585;
+a:link,
+a:visited {
+    color: #C71585;
 }
+
 a:hover {
-  color: #ff69b4 ;
+    color: #ff69b4;
 }
+
 a:active {
-  color: #C71585;
+    color: #C71585;
+}
+
+#about-text {
+    font-family: "Sanchez", Georgia, "Times New Roman", Times, serif;
+    font-size: 1.3em;
+    padding: 20px;
+}
+
+#about-intro {
+    font-size: 1.2em;
+    padding: 30px;
+}
+
+figure {
+    text-align: center;
+    padding: 20px;
 }
 
 em {
-  /*background: black;*/
-  color: black;
-  padding:3px;
-  padding-left: 5px;
-  padding-right: 5px;
-  font-size: 1.1em;
-  font-style: normal;
-  font-weight: bold;
+    /*background: black;*/
+    color: black;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 1.1em;
+    font-style: normal;
+    font-weight: bold;
 }
 
 .footer {
@@ -39,453 +61,477 @@ em {
     background-color: #fff;
 }
 
-.artist-text, .intro-text, .work-info, .image-summary, .download{
-  background-color: #ccc;
+.artist-text,
+.intro-text,
+.work-info,
+.image-summary,
+.download {
+    background-color: #ccc;
 }
 
-.btn{
-  font-family: 'Oswald', sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  padding: 10px;
-  border:1px solid #C71585;
+.btn {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid #C71585;
 }
 
-.btn:link, .btn:visited{
-  color: #ffffff;
-  background-color: #C71585;
+.btn:link,
+.btn:visited {
+    color: #ffffff;
+    background-color: #C71585;
 }
 
-.btn:hover{
-  color: #C71585;
-  background-color: #cccccc;
+.btn:hover {
+    color: #C71585;
+    background-color: #cccccc;
 }
 
-.text-controller{
-  color: #C71585;
-  font-family: 'Lato', sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-}
-.text-controller-container{
-  text-align: right;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-  padding-top: 0px;
-  margin-top: 0px;
-  padding-right: 10px;
+.text-controller {
+    color: #C71585;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
 }
 
-.text-toggle{
-  letter-spacing: 2px;
+.text-controller-container {
+    text-align: right;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    margin-top: 0px;
+    padding-right: 10px;
 }
 
-.process-message{
-  text-align: center;
+.text-toggle {
+    letter-spacing: 2px;
 }
+
+.process-message {
+    text-align: center;
+}
+
+
 /*--------------- Navbar ---------------- */
-.navigation{
-  margin-top: 10px;
-  padding-bottom: 5px;
-}
-.site-title{
-  font-size: 1.8em;
+
+.navigation {
+    margin-top: 10px;
+    padding-bottom: 5px;
 }
 
-.site-title a:link, .site-title a:visited {
-  color: black;
+.site-title {
+    font-size: 1.8em;
 }
 
-.nav-area{
-  text-align: right;
-  padding-top: 10px;
-  padding-right: 20px;
+.site-title a:link,
+.site-title a:visited {
+    color: black;
 }
 
-.nav-area li{
-  display: inline;
-  margin-left: 20px;
-  font-size: 1.2em;
-  font-weight: bold;
+.nav-area {
+    text-align: right;
+    padding-top: 10px;
+    padding-right: 20px;
 }
 
-.social-media-icon{
-  margin-right: 10px;
+.nav-area li {
+    display: inline;
+    margin-left: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
 }
+
+.social-media-icon {
+    margin-right: 10px;
+}
+
+
 /*--------------- Index view -------------- */
 
 .intro-text {
-  padding-top: 30px;
-  padding-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 40px;
 }
 
 @media only screen and (min-width: 768px) {
-  .intro-text p{
-    width:70%;
-    margin-left: auto;
-    margin-right: auto;
+    .intro-text p {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.4em;
+        line-height: 40px;
+        margin-top: 10px;
+        font-family: "Sanchez", Georgia, "Times New Roman", Times, serif;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .intro-text p {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.2em;
+        line-height: 35px;
+        margin-top: 10px;
+        font-family: "Sanchez", Georgia, "Times New Roman", Times, serif;
+        text-align: center;
+    }
+}
+
+.work-image {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+    .work-image img {
+        width: 60%;
+        max-width: 600px;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .work-image img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.work-info {
+    padding-top: 15px;
+    padding-bottom: 55px;
+}
+
+.work-info-landing {
+    padding-bottom: 35px;
+    background-color: #fff;
+}
+
+.work-info p {
+    text-align: center;
+}
+
+.work-info .month {
     font-size: 1.4em;
-    line-height: 40px;
-    margin-top: 10px;
-    font-family: "Sanchez",Georgia,"Times New Roman",Times,serif;
-    text-align: center;
-  }
+    color: #999;
 }
 
-@media only screen and (max-width: 768px) {
-  .intro-text p{
-    width:85%;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.2em;
-    line-height: 35px;
-    margin-top: 10px;
-    font-family: "Sanchez",Georgia,"Times New Roman",Times,serif;
-    text-align: center;
-  }
+.work-info .title {
+    font-size: 1.6em;
+    font-weight: bold;
 }
 
-.work-image{
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+.work-info .artist-name {
+    font-size: 1.4em;
+    color: #999;
+    font-weight: bold;
 }
 
-
-@media only screen and (min-width: 768px) {
-  .work-image img{
-    width:60%;
-    max-width: 600px;
-    height: auto;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .work-image img{
-    width:100%;
-    height: auto;
-  }
-}
-
-
-
-
-.work-info{
-  padding-top: 15px;
-  padding-bottom: 55px;
-}
-.work-info-landing{
-  padding-bottom: 35px;
-  background-color: #fff;
-}
-
-.work-info p{
-  text-align: center;
-}
-
-.work-info .month{
-  font-size: 1.4em;
-  color: #999;
-}
-
-.work-info .title{
-  font-size: 1.6em;
-  font-weight: bold;
-}
-
-.work-info .artist-name{
-  font-size: 1.4em;
-  color: #999;
-  font-weight: bold;
-}
-
-.artist-text{
-  padding-top: 15px;
+.artist-text {
+    padding-top: 15px;
 }
 
 .artist-text p {
-  max-width: 800px;
-  font-size: 1.3em;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 35px;
-  font-family: "Sanchez",Georgia,"Times New Roman",Times,serif;
-  margin-top: 30px;
+    max-width: 800px;
+    font-size: 1.3em;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 35px;
+    font-family: "Sanchez", Georgia, "Times New Roman", Times, serif;
+    margin-top: 30px;
 }
 
 .social-media-list li {
-  display: inline;
+    display: inline;
 }
 
-.social-media-i i{
-  padding: 10px;
+.social-media-i i {
+    padding: 10px;
 }
 
-.social-media-list a:link, .social-media-list a:visited{
-  color: #999;
+.social-media-list a:link,
+.social-media-list a:visited {
+    color: #999;
 }
 
 .social-media-list a:hover {
-  color: #ff69b4;
+    color: #ff69b4;
 }
 
-.send-contact-btn, .init_download-btn, .give-donation-btn, .get-artwork-btn{
-  margin-top: 20px;
-  margin-bottom: 30px;
-  letter-spacing: 4px;
-  padding-left: 20px;
-  padding-right: 20px;
+.send-contact-btn,
+.init_download-btn,
+.give-donation-btn,
+.get-artwork-btn {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    letter-spacing: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-.give-donation-btn, .send-contact-btn, .send-email-btn{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  font-size: 17px;
+.give-donation-btn,
+.send-contact-btn,
+.send-email-btn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 17px;
 }
 
-.send-email-btn{
-  text-align: right;
+.send-email-btn {
+    text-align: right;
 }
+
+@media only screen and (max-width: 768px) {
+    .send-email-btn {
+        margin-top: -320px;
+    }
+}
+
+
 /*--------------- Download view -------------- */
 
-.download-email-input{
-
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-@media only screen and (min-width: 768px) {
-  .call-to-share-and-donate{
-    text-align: center;
-    padding-bottom: 15px;
-    font-size: 30px;
-    margin-top: 50px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .call-to-share-and-donate{
-    text-align: center;
-    padding-bottom: 15px;
-    font-size: 25px;
-    margin-top: 50px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .donation-input-element{
-    display: inline;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .donation-input-element{
-    display: block;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .share-element{
-    display: inline;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .share-element{
-    display: block;
+.download-email-input {
+    margin-bottom: 20px;
     margin-top: 20px;
-  }
 }
 
-
-
-.image-summary h3{
-  text-align: center;
-  padding-bottom: 35px;
+@media only screen and (min-width: 768px) {
+    .call-to-share-and-donate {
+        text-align: center;
+        padding-bottom: 15px;
+        font-size: 30px;
+        margin-top: 50px;
+    }
 }
 
-.share-options{
-  margin-top: 30px;
-  margin-bottom: 20px;
-  text-align: center;
+@media only screen and (max-width: 768px) {
+    .call-to-share-and-donate {
+        text-align: center;
+        padding-bottom: 15px;
+        font-size: 25px;
+        margin-top: 50px;
+    }
 }
 
-.image-summary{
-  font-family: "Sanchez",Georgia,"Times New Roman",Times,serif;
+@media only screen and (min-width: 768px) {
+    .donation-input-element {
+        display: inline;
+    }
 }
 
-.image-summary em{
-  color: #C71585;
+@media only screen and (max-width: 768px) {
+    .donation-input-element {
+        display: block;
+    }
 }
 
-.image-summary h3{
-  font-size: 16px;
-  margin-bottom: 20px;
-  font-family: 'Lato', sans-serif;
-  color: #999;
-  font-weight: bold;
+@media only screen and (min-width: 768px) {
+    .share-element {
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .share-element {
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+.image-summary h3 {
+    text-align: center;
+    padding-bottom: 35px;
+}
+
+.share-options {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.image-summary {
+    font-family: "Sanchez", Georgia, "Times New Roman", Times, serif;
+}
+
+.image-summary em {
+    color: #C71585;
+}
+
+.image-summary h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-family: 'Lato', sans-serif;
+    color: #999;
+    font-weight: bold;
 }
 
 .img-container {
-  padding-top: 10px;
-  text-align: center;
-  padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    padding-bottom: 10px;
 }
 
-
-
-.donation-form-container{
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  text-align: center;
+figcaption {
+    font-size: .9em;
 }
 
-.download{
-  text-align: center;
+.donation-form-container {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-
-.distribution-description{
-  font-family: "Sanchez",Georgia,"Times New Roman",Times,serif;
-  margin-top:30px;
-  margin-bottom: 40px;
+.download {
+    text-align: center;
 }
 
-.distribution-description h3{
-  margin-bottom: 20px;
+.distribution-description {
+    font-family: "Sanchez", Georgia, "Times New Roman", Times, serif;
+    margin-top: 30px;
+    margin-bottom: 40px;
 }
 
-.distribution-description li{
-  font-family: "Sanchez",Georgia,"Times New Roman",Times,serif;
-  list-style-type: none;
-  font-size: 1.2em;
+.distribution-description h3 {
+    margin-bottom: 20px;
 }
 
-.distribution-description ul{
-  padding-left: 0px;
+.distribution-description li {
+    font-family: "Sanchez", Georgia, "Times New Roman", Times, serif;
+    list-style-type: none;
+    font-size: 1.2em;
 }
 
-.additional-description{
-  font-family: "Sanchez",Georgia,"Times New Roman",Times,serif;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  font-size: 1.2em;
-  max-width: 500px;
-  /*margin-left: auto;
+.distribution-description ul {
+    padding-left: 0px;
+}
+
+.additional-description {
+    font-family: "Sanchez", Georgia, "Times New Roman", Times, serif;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-size: 1.2em;
+    max-width: 500px;
+    /*margin-left: auto;
   margin-right: auto;*/
 }
 
-.digital-download-content{
-  margin-top: 20px;
-  max-width: 500px;
-  /*margin-left: auto;
+.digital-download-content {
+    margin-top: 20px;
+    max-width: 500px;
+    /*margin-left: auto;
   margin-right: auto;*/
 }
 
-.donate p{
-  font-size: 0.9em;
-  font-style: italic;
+.donate p {
+    font-size: 0.9em;
+    font-style: italic;
 }
 
-.donate .btn{
-  margin-bottom: 5px;
+.donate .btn {
+    margin-bottom: 5px;
 }
 
-.direct-contact-option{
-  margin-top: 30px;
+.direct-contact-option {
+    margin-top: 30px;
 }
 
-.required-item{
-  color: #C71585;
+.required-item {
+    color: #C71585;
 }
+
+
 /*--------------- Contact Modal -------------- */
 
 .modal-mask {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .5);
-  display: table;
-  transition: opacity .3s ease;
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: table;
+    transition: opacity .3s ease;
 }
 
 .modal-wrapper {
-  display: table-cell;
-  vertical-align: middle;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .modal-container {
-  width: 380px;
-  min-height: 420px;
-  margin: 0px auto;
-  padding: 10px 20px;
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
-  transition: all .3s ease;
-  font-family: 'Lato', sans-serif;
-  font-size: 1.1em;
+    width: 380px;
+    min-height: 420px;
+    margin: 0px auto;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+    transition: all .3s ease;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
 }
 
 .modal-header h3 {
-  margin-top: 0;
-  color: #000;
+    margin-top: 0;
+    color: #000;
 }
 
-.modal-header .close-me{
-  float: right;
-  color: #C71585;
-  letter-spacing: 2px;
-  font-size: 10px;
+.modal-header .close-me {
+    float: right;
+    color: #C71585;
+    letter-spacing: 2px;
+    font-size: 10px;
 }
 
 .modal-body {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 
 .modal-default-button {
-  float: right;
+    float: right;
 }
 
-
 .modal-enter {
-  opacity: 0;
+    opacity: 0;
 }
 
 .modal-leave-active {
-  opacity: 0;
+    opacity: 0;
 }
 
 .modal-enter .modal-container,
 .modal-leave-active .modal-container {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
+
 
 /*----------Validation ----------- */
 
-.label{
-  color:black;
+.label {
+    color: black;
 }
 
-.is-danger{
-  color:red;
+.is-danger {
+    color: red;
 }
 
-.input-error{
-  border:1px solid red;
+.input-error {
+    border: 1px solid red;
 }
 
-.no-input-error{
-  border:1px solid green;
+.no-input-error {
+    border: 1px solid green;
 }
 
 input:focus {
@@ -493,22 +539,26 @@ input:focus {
     /*box-shadow: 0 0 10px #719ECE;*/
 }
 
-.activated{
-  background-color: blue;
+.activated {
+    background-color: blue;
 }
 
-.help{
-  font-size: 0.8em
+.help {
+    font-size: 0.8em
 }
 
-.contact-input-group span{
-  float:left;
-}
-.contact-input-group p{
-  padding-left: 30px;
+.contact-input-group span {
+    float: left;
 }
 
-.hide-button a:link, .hide-button a:visited, .hide-button a:hover, .hide-button a:active{
-  color: #aaa;
-  background-color: #ccc
+.contact-input-group p {
+    padding-left: 30px;
+}
+
+.hide-button a:link,
+.hide-button a:visited,
+.hide-button a:hover,
+.hide-button a:active {
+    color: #aaa;
+    background-color: #ccc
 }
