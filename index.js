@@ -31,7 +31,7 @@ app.use(function (req, res) {
     });
 });
 
-var appPort = 7777;
+var appPort = 7779;
 
 app.listen(appPort, function () {
     console.log("Magic on port %d", appPort);

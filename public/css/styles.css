@@ -119,7 +119,12 @@ em {
 .process-message {
     text-align: center;
 }
-
+/*
+.site-brand{
+  min-width:50px;
+  min-height:50px;
+}
+*/
 
 /*--------------- Navbar ---------------- */
 
@@ -173,6 +178,13 @@ em {
         font-family: "Sanchez", Georgia, "Times New Roman", Times, serif;
         text-align: center;
     }
+    .intro-text h1{
+      text-align: center;
+      padding-bottom:25px;
+    }
+    .intro-text h1 .core{
+      display: none;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -185,6 +197,16 @@ em {
         margin-top: 10px;
         font-family: "Sanchez", Georgia, "Times New Roman", Times, serif;
         text-align: center;
+    }
+    .intro-text h1{
+      max-width: 350px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .intro-text h1 .extension{
+      display: block;
+      font-size: 0.8em;
+      padding-top: 20px;
     }
 }
 
@@ -216,14 +238,44 @@ em {
     }
 }
 
+
 @media only screen and (min-width: 768px) {
     .kitten-gif{
         width: 50%;
         height: auto;
     }
 }
+@media only screen and (max-width: 768px) {
+  .get-artwork-btn-container-mobile{
+    text-align: center;
+    display: block;
+  }
+  .get-artwork-btn-container-desktop{
+    text-align: center;
+    display: none;
+  }
 
+  .text-controller-container{
+    display:none;
+  }
+  .mission-statement{
+    display: none;
+  }
+  .artist-text{
+    padding-bottom: 25px;
+  }
+}
 
+@media only screen and (min-width: 768px) {
+  .get-artwork-btn-container-mobile{
+    text-align: center;
+    display: none;
+  }
+  .get-artwork-btn-container-desktop{
+    text-align: center;
+    display: block;
+  }
+}
 
 .work-info {
     padding-top: 15px;

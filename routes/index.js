@@ -60,7 +60,7 @@ router.post('/initiate-download-process', function(req, res, next){
 
 ///--------------------
 router.get('/contact', function(req,res,next){
-  res.render('contact',{domain: process.env.DOMAIN});
+  res.render('contact',{domain: process.env.DOMAIN, current_page: 'contact'});
 })
 
 router.get('/about', function(req,res,next){
