@@ -367,6 +367,16 @@ em {
     .send-email-btn {
         margin-top: -320px;
     }
+    .mobile-download-button-container{
+      display: block;
+      text-align: center;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .mobile-download-button-container{
+      display: none;
+    }
 }
 
 
