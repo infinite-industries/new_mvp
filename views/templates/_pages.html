@@ -36,8 +36,6 @@
   </head>
 <body>
 
-  I am {{current_page}}
-
   <div class="container-fluid navigation">
     <div class="row">
       <div class="col-xs-1">
@@ -50,9 +48,20 @@
       <div class="col-sm-5 col-xs-11">
         <div class="nav-area">
           <ul>
-            <li><a href="http://{{domain}}/about">About</a></li>
+            {% if current_page=='about' %}
+              <li><a href="http://{{domain}}/about" style="text-decoration:underline;">About</a></li>
+            {% else %}
+              <li><a href="http://{{domain}}/about">About</a></li>
+            {% endif %}
+
             <li><a href="https://medium.com/infinite-industries" target="_new">Blog</a></li>
+            
+            {% if current_page=='contact' %}
+              <li><a href="http://{{domain}}/contact" style="text-decoration:underline;">Contact</a></li>
+            {% else %}
             <li><a href="http://{{domain}}/contact">Contact</a></li>
+            {% endif %}
+
           </ul>
         </div>
       </div>

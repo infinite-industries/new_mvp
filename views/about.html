@@ -1,30 +1,8 @@
 {% extends "templates/_pages.html" %} {% block content %}
 
-<body>
-
-    <div class="container-fluid navigation">
-        <div class="row">
-            <div class="col-xs-1">
-                <a href="./index.html" class="site-brand"><img src="images/site-logo.png" width="40px" height="40px"></a>
-            </div>
-            <div class="col-sm-4 site-title hidden-xs">
-                <a href="./index.html">Infinite Industries</a>
-            </div>
-            <div class="col-sm-2 hidden-xs"></div>
-            <div class="col-sm-5 col-xs-11">
-                <div class="nav-area">
-                    <ul>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="https://medium.com/infinite-industries" target="_new">Blog</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid" id="about-text">
-        <p id="about-intro"> <strong> Infinite Industries </strong>is an experimental, digital platform that makes high-quality, contemporary art accessible to everyone.
+    <div class="container-fluid">
+      <div id="about-text">
+        <!-- <p id="about-intro"> <strong> Infinite Industries </strong>is an experimental, digital platform that makes high-quality, contemporary art accessible to everyone.
             <br>
             <br>
             <a href="#">Tool-making </a> |
@@ -32,7 +10,7 @@
 
             <a href="#">Distributing Information </a> |
             <a href="#">Curation </a>
-        </p>
+        </p> -->
 
         <h3> Who are "we?"</h3>
 
@@ -55,7 +33,7 @@
             Take the images below: what would the message be if the kitten poster was seen at a protest for animal rights? In a pre-teen’s bedroom? Placing the art in different environments adds to the context of a piece, which the audience can then use to further contemplate the work.
         </p>
         <figure>
-            <img src="/public/images/kitten_gif.gif" style="width: 450px;" class="" />
+            <img src="/images/kitten_gif.gif" class="kitten-gif" />
             <figcaption>Our perception of the kitten changes within different cultural contexts.</figcaption>
         </figure>
 
@@ -122,10 +100,6 @@
         <h3>Are you guys a for profit company? Who stands to gain if you succeed?</h3>
 
         <p>
-            Nope. A 501(c3) non-profit. All the code that is being developed is open source and, once we lock down a mature code base and have solid data on digital collectors’ needs and wants, we will push it out to the world to share. Our goal is to fundamentally change the conversation around artwork distribution, not to create a <a href="https://en.wikipedia.org/wiki/Category_killer">category killer</a>.
-        </p>
-
-        <p>
             Nope. We are a 501(c3) non-profit. A large part of our activities is the development of software tools. We release these to the world as open-source, where fellow nerds can look at this code and create their own projects and variations on what we created. It’s kind of like creating and sharing a recipe for your favorite chocolate chip cookies, then letting others bake and taste their own. Sometimes people even create and share their own variations of your recipe.
         </p>
 
@@ -144,8 +118,8 @@ I am an art world insider. I have seen a bunch of projects with similar claims. 
         <p>
             We aim to modernize the distribution of art through digital media, while still maintaining the integrity of the original artwork.
         </p>
+      </div>
     </div>
 
-</body>
 
 {% endblock %} {% block scripts %} {% endblock %}
