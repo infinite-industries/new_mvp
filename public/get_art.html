@@ -167,41 +167,34 @@
                 <a href="#" class="btn btn-active init_download-btn" role="button" @click="showDownloadModal = true">GET DOWNLOAD LINK</a>
             </div>
 
-            <div class="row distribution-description">
-                <div class="col-md-2 col-sm-1"></div>
+            <div class="distribution-description">
 
-                <div class="col-md-3 col-sm-4">
-                    <div class="digital-download-content">
-                        <h3>Download Content:</h3>
-                        <ul>
-                            <li>2000 X 2000 JPEG</li>
-                            <li>5000 X 5000 JPEG</li>
-                            <li>FULL PRODUCTION REZ</li>
-                            <li><a href="https://infinite-industries.github.io/license/limited_license_agreement/" target="_new">License File</a></li>
-                        </ul>
-                    </div>
-                </div>
+              <div class="digital-download-content">
+                  <h3>Download Content:</h3>
+                  <ul>
+                      <li>2000 X 2000 JPEG</li>
+                      <li>5000 X 5000 JPEG</li>
+                      <li>FULL PRODUCTION REZ</li>
+                      <li><a href="https://infinite-industries.github.io/license/limited_license_agreement/" target="_new">License File</a></li>
+                  </ul>
+              </div>
 
-                <div class="col-sm-2"></div>
-
-                <div class="col-sm-4">
-                    <div class="additional-description">
-                        <h3>Additional Options:</h3>
-                        <p>
-                            No hastle <a href="https://www.levelframes.com/frames/new?level_id=35502" target="_new">print production and framing</a>
-                        </p>
-                        <p class="direct-contact-option">
-                            <a href="#" id="show-modal" @click="showContactModal = true">Contact us directly</a> for prints from the edition produced, proofed and signed by the artist
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-sm-1"></div>
             </div>
         </div>
 
         <div class="container-fluid download">
-            <a href="#" class="btn btn-active init_download-btn" role="button" @click="showDownloadModal = true">GET DOWNLOAD LINK</a>
+          <div class="additional-description">
+              <h3>Additional Options:</h3>
+              <p class="framed-print-option">
+                  <a href="https://www.levelframes.com/frames/new?level_id=35502" target="_new">framed print 12X12"</a>
+              </p>
+              <p class="direct-contact-option">
+                  <a href="#" id="show-modal" @click="showContactModal = true">Contact us directly</a> for prints from the edition produced, proofed and signed by the artist
+              </p>
+          </div>
+
+          <a href="#" class="btn btn-active init_download-btn" role="button" @click="showDownloadModal = true">GET DOWNLOAD LINK</a>
+
         </div>
 
         <footer class="footer">

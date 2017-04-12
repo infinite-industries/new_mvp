@@ -483,7 +483,7 @@ figcaption {
 
 .distribution-description {
     font-family: "Sanchez", Georgia, "Times New Roman", Times, serif;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 40px;
 }
 
@@ -506,16 +506,19 @@ figcaption {
     margin-top: 20px;
     margin-bottom: 40px;
     font-size: 1.2em;
-    max-width: 500px;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
     /*margin-left: auto;
   margin-right: auto;*/
 }
 
 .digital-download-content {
-    margin-top: 20px;
-    max-width: 500px;
-    /*margin-left: auto;
-  margin-right: auto;*/
+
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .donate p {
@@ -528,13 +531,16 @@ figcaption {
 }
 
 .direct-contact-option {
-    margin-top: 30px;
+  margin-top: 30px;
+}
+
+.framed-print-option{
+  margin-top: 30px;
 }
 
 .required-item {
     color: #C71585;
 }
-
 
 /*--------------- Contact Modal -------------- */
 
