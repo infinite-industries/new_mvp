@@ -126,7 +126,7 @@
         </div>
 
         <div class="container-fluid image-summary">
-            <h2 class="call-to-share-and-donate">Before downloading, we would like to ask you to <em>donate</em></h2>
+            <h2 class="call-to-share-and-donate">Before downloading, we would like to ask you to donate</h2>
             <h3>You don’t have to but you will definitely earn some good art karma points and our deep appreciation :)</h3>
         </div>
 
@@ -142,7 +142,7 @@
                     <div class="donation-input-element"><a href="#" class="btn give-donation-btn" role="button" @click.prevent="processDonation()">GIVE</a></div>
 
                     <p>
-                        We are a non-profit organization with 501(C)(3) status. All your donations are tax deductable.
+                        We are a non-profit organization with 501(C)(3) status. All your donations are tax deductable. All the funds collected go towards artists' fees and infrastructure costs.
                     </p>
                 </div>
 
@@ -151,12 +151,12 @@
 
 
         <div class="container-fluid work-info">
-            <p class="month">March-April 2017</p>
-            <p class="title">Cartoon Bubble Sunset</p>
-            <p class="artist-name">Amanda Church</p>
+            <p class="month">May 2017</p>
+            <p class="title">Empty and Full</p>
+            <p class="artist-name">Ming Ying Hong</p>
 
             <div class="img-container">
-                <img src="/images/cartoon-bubble-sunset.jpg" width="250px" height="250px">
+                <img src="/images/empty-and-full-ming-hong.jpg" width="250px" height="250px">
             </div>
 
         </div>
@@ -168,13 +168,42 @@
             </div>
 
             <div class="distribution-description">
+              <div class="container content-desktop">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="digital-download-content">
+                          <h3>Download Content:</h3>
+                          <ul class="download-options-list">
+                              <li>2000 X 2000 JPEG</li>
+                              <li>5000 X 5000 JPEG</li>
+                              <li>FULL PRODUCTION REZ</li>
+                              <li>About the Artist PDF</li>
+                              <li><a href="https://infinite-industries.github.io/license/limited_license_agreement/" target="_new">License File</a></li>
+                          </ul>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="additional-description content-desktop">
+                          <h3>Additional Options:</h3>
+                          <p class="framed-print-option">
+                              <a href="https://www.levelframes.com/frames/new?level_id=40289" target="_new">Framed Print 12X12"</a>
+                          </p>
+                          <p class="direct-contact-option">
+                              <a href="#" id="show-modal" @click="showContactModal = true">Contact us directly</a> for prints from the edition produced, proofed and signed by the artist
+                          </p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
 
-              <div class="digital-download-content">
+
+              <div class="digital-download-content content-mobile">
                   <h3>Download Content:</h3>
                   <ul>
                       <li>2000 X 2000 JPEG</li>
                       <li>5000 X 5000 JPEG</li>
                       <li>FULL PRODUCTION REZ</li>
+                      <li>About the Artist PDF</li>
                       <li><a href="https://infinite-industries.github.io/license/limited_license_agreement/" target="_new">License File</a></li>
                   </ul>
               </div>
@@ -183,10 +212,10 @@
         </div>
 
         <div class="container-fluid download">
-          <div class="additional-description">
+          <div class="additional-description content-mobile">
               <h3>Additional Options:</h3>
               <p class="framed-print-option">
-                  <a href="https://www.levelframes.com/frames/new?level_id=35502" target="_new">framed print 12X12"</a>
+                  <a href="https://www.levelframes.com/frames/new?level_id=35502" target="_new">Framed Print 12X12"</a>
               </p>
               <p class="direct-contact-option">
                   <a href="#" id="show-modal" @click="showContactModal = true">Contact us directly</a> for prints from the edition produced, proofed and signed by the artist

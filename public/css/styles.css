@@ -125,6 +125,25 @@ em {
   min-height:50px;
 }
 */
+@media only screen and (max-width: 768px) {
+  .content-mobile{
+    display: block;
+  }
+
+  .content-desktop{
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .content-mobile{
+    display: none;
+  }
+
+  .content-desktop{
+    display: block;
+  }
+}
 
 /*--------------- Navbar ---------------- */
 
@@ -510,8 +529,12 @@ figcaption {
     margin-left: auto;
     margin-right: auto;
     text-align: left;
-    /*margin-left: auto;
-  margin-right: auto;*/
+
+}
+
+.content-desktop .digital-download-content{
+  margin-left: auto;
+  margin-right: 40px;
 }
 
 .digital-download-content {
@@ -519,6 +542,11 @@ figcaption {
     max-width: 200px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.content-desktop .additional-description{
+  margin-left: 40px;
+  margin-right: auto;
 }
 
 .donate p {
@@ -542,6 +570,12 @@ figcaption {
     color: #C71585;
 }
 
+.download-options-list{
+  margin-top: 30px;
+}
+.download-options-list li{
+  margin-top:7px;
+}
 /*--------------- Contact Modal -------------- */
 
 .modal-mask {

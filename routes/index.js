@@ -32,7 +32,8 @@ router.post('/initiate-download-process', function(req, res, next){
   console.log('contacted by: '+req.body.download_email);
   console.log('can email: '+req.body.download_okToPutOnEmailList);
 
-  var download= "amanda_church"; //manually set for now
+  //var download= "amanda_church"; //manually set for now
+  var download= "ming_hong"
 
   axios.post(process.env.FILE_SERVER_ADDRESS+'/create-download-key', {
     user_email: req.body.download_email,
